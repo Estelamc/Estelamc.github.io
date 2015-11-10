@@ -25,6 +25,6 @@ function primo(){
 	}
 	else{ // inválido
 		document.getElementById("info").style.color="red";
-		document.getElementById("info").innerHTML=" Formato incorrecto.<br/>  Pista: debe ser un número positivo.";
+		document.getElementById("info").innerHTML=" Formato incorrecto.<br/>  Pista: debe ser un número entero positivo.";
 	}			
 }
