@@ -13,7 +13,7 @@
 	-->
 
 	<head>
-		<meta charset="utf-8">				
+		<meta charset="UTF-8">				
 		
 		<title>Adiv&iacute;nalo</title>
 		
@@ -27,13 +27,13 @@
 		<noscript>JavaScript se encuentra desactivado, actívelo siguiendo los siguientes pasos: <a href="http://enable-javascript.com/es/">Activar/Desactivar JavaScript</a></noscript>
 	</head>
 
-	<body>
+	<body onload="generarAleat();">
 		<!--document.numeros y document.numeros.numero1-->
 		<p>Intente adivinar el n&uacute;mero que estoy pensando del 1 al 100:</p>
 		<form> 
-			N&uacute;mero: <input type="text" id="numero" /><span id="info"></span><br /><br />						
-			<input type="button" name="comprobar" value="Comprobar" onclick="numeroInfo();" />
+			N&uacute;mero: <input type="text" id="numero" /><br /><br />						
+			<input type="button" name="comprobar" value="Comprobar" onclick="adivinaInfo();" />
 		</form>
-		<p id="infoR"></p>
+		<p id="info"></p>
 	</body>
 </html>
