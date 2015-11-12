@@ -1,3 +1,47 @@
+/*
+	Realizar una aplicación en JavaScript que realice lo siguiente:
+		1.Abra una nueva ventana.
+			-Hacer una función y dentro de esa función:
+			-Escribir en la nueva ventana <h1>Ventana Nueva</h1>
+			-URL Completa: XXXXX
+			-Protocolo utilizado: XXXXX
+			-Nombre en código del navegador: XXXXX
+			-Que detecte si está JAVA disponible en esa ventana del navegador y si es así que escriba:
+				-Java SI disponible en esta ventana, o bien.
+				-Java NO disponible en esta ventana.
+			-Que abra una ventana con el contenido de http://www.iesgrancapitan.org/portal/ de 800x600.
+		
+		2.Y ahora fuera del código de la función que siga haciendo lo siguiente:
+			-Que escriba en la ventana principal <h1>Tarea del tema 3</h1>
+			-Que solicite: introduzca su nombre y apellidos.
+			-Que solicite: introduzca DIA de nacimiento.
+			-Que solicite: introduzca MES de nacimiento.
+			-Que solicite: introduzca AÑO de nacimiento.
+			-Una vez solicitados esos datos imprimirá en la ventana principal:
+				-Buenos dias XXXXX
+				-Tu nombre tiene XX caracteres, incluidos espacios.
+				-La primera letra E de tu nombre está en la posición: X
+				-La última letra E de tu nombre está en la posición: X
+				-Tu nombre menos las 3 primeras letras es: XXXXXXXX
+				-Tu nombre todo en mayúsculas es: XXXXXXXX
+				-Tu edad es: XX años.
+				-Naciste un feliz XXXXXX del año XXXX. No te acuerdas, pero era (LUNES/MARTES/MIÉRCOLES...) y [NO|SI] bisiesto
+				-El coseno de 90 es: XXXXXXXXXX
+				-El número mayor de (65, 22, 69, 99, 12) es: XX
+				-Ejemplo de número al azar entre 1 y 10: XXXXXXXXXX
+		
+		3.Donde aparecen las XXXX tendrá que aparecer el cálculo o texto que corresponda.
+		
+		4.Criterios de puntuación. 
+			-Cumplimiento de los requisitos anteriores
+			-Usabilidad
+			-Estética (sin librerías)
+			-Presentación del código (comentarios, identación...)
+
+	@author Estela Muñoz Cordón
+	@version 1.0	
+*/
+
 // Abre una nueva ventana
 function abrirVentana(){
 	var ventanaNueva = window.open(); // Abrimos ventana nueva
@@ -35,12 +79,6 @@ function abrirVentana(){
 		"</html>");	
 
 	ventanaNueva.document.close(); // Cerramos documento
-	
-	/*var botonJava = ventanaNueva.document.getElementById("java");
-	botonJava.addEventListener("click", function(){infoJava();});*/
-
-	/*var botonOtraVentana = ventanaNueva.document.getElementById("otraVentana");
-	botonOtraVentana.addEventListener("click", function(){abrirOtraVentana();});*/
 }
 
 // Modifica la ventan principal
@@ -48,7 +86,8 @@ function ventanaPrincipal(){
 	document.getElementById("contenido").innerHTML = 
 		"<h1>Tarea del Tema 3</h1>"+
 		"<form>"+ 
-			"Introduzca su nombre y apellidos: <input type=\"text\" id=\"nombre\" />"+
+			"<input type=\"button\" name=\"abrir\" value=\"Abrir Ventana\" onclick=\"abrirVentana();\" />"+
+			"<br/><br/>Introduzca su nombre y apellidos: <input type=\"text\" id=\"nombre\" />"+
 			"<span id=\"infoN\"></span><br /><br />"+						
 			"Introduzca DÍA de nacimiento: <input type=\"text\" id=\"dia\" />"+
 			"<span id=\"infoD\"></span><br /><br />"+
@@ -68,28 +107,72 @@ function info(){
 	var diaV = document.getElementById("dia").value;
 	var mesV = document.getElementById("mes").value;
 	var annoV = document.getElementById("anno").value;
+	// Recogemos el año actual
+	var date = new Date();
+	var annoActual = date.getFullYear();
 
-	// VALIDAR
-	document.getElementById("info").innerHTML = 
+	if (nombreEsValido(nombreV) && diaEsValido(diaV) 
+		&& mesEsValido(mesV) && annoEsValido(annoV, annoActual)) { // datos válidos
+		// Quitamos los mensajes de error
+		document.getElementById("infoN").innerHTML=" ";
+		document.getElementById("infoD").innerHTML=" ";
+		document.getElementById("infoM").innerHTML=" ";
+		document.getElementById("infoA").innerHTML=" ";
+
+		document.getElementById("info").innerHTML = 
 		"<p>Buenos días "+nombreV+"."+
 		"<br/>Tu nombre tiene "+nombreV.length+" caracteres, incluidos espacios."+
 		"<br/>La primera letra E de tu nombre está en la posición: "+nombreV.toLowerCase().indexOf("e")+"."+
 		"<br/>La última letra E de tu nombre está en la posición: "+nombreV.toLowerCase().lastIndexOf("e")+"."+
 		"<br/>Tu nombre menos las 3 primeras letras es: "+quitarLetras(nombreV)+"."+
 		"<br/>Tu nombre todo en mayúsculas es: "+nombreV.toUpperCase()+"."+
-		"<br/>Tu edad es: "+edad(annoV)+"."+
-		"<br/>Naciste un feliz "+diaV+" del "+mesV+" del año "+annoV+"."+
-		". No te acuerdas, pero era (lunes..)"+" y "+" bisiesto."+ // FALTAAAAAAAAAAAAAAAAAAAAAAA
+		"<br/>Tu edad es: "+edad(annoV, annoActual)+"."+
+		"<br/>Naciste un feliz "+diaV+" del "+mesV+" del año "+annoV+
+		". No te acuerdas, pero era "+diaSemana(diaV, mesV, annoV)+" y "+bisiestoInfo(annoV)+" bisiesto."+ // FALTAAAAAAAAAAAAAAAAAAAAAAA
 		"<br/>El coseno de 90 es: "+Math.cos(90)+"."+
 		"<br/>El número mayor de (65, 22, 69, 99, 12) es: "+mayor()+"."+
 		"<br/>Ejemplo de número al azar entre 1 y 10: "+aleatorio()+".";
+	}
+	else{ // datos inválidos
+		if (!nombreEsValido(nombreV)) {
+			document.getElementById("infoN").innerHTML=" Formato incorrecto ";
+			document.getElementById("infoN").style.color="red";
+		}
+		else{
+			document.getElementById("infoN").innerHTML=" ";
+		}
+
+		if (!diaEsValido(diaV)) {
+			document.getElementById("infoD").innerHTML=" Formato incorrecto ";
+			document.getElementById("infoD").style.color="red";
+		}
+		else{
+			document.getElementById("infoD").innerHTML=" ";
+		}
+
+		if (!mesEsValido(mesV)) {
+			document.getElementById("infoM").innerHTML=" Formato incorrecto ";
+			document.getElementById("infoM").style.color="red";
+		}
+		else{
+			document.getElementById("infoM").innerHTML=" ";
+		}
+
+		if (!annoEsValido(annoV, annoActual)) {
+			document.getElementById("infoA").innerHTML=" Formato incorrecto ";
+			document.getElementById("infoA").style.color="red";
+		}
+		else{
+			document.getElementById("infoA").innerHTML=" ";
+		}
+	}	
 }
 
 // Calcula un número aleatorio del 1 al 10
 function aleatorio(){
-	var aleato = Math.random() * (10-1);
-    aleato = Math.floor(aleato);
-    return parseInt(1) + aleato;
+	var aleat = Math.random() * (10-1);
+    aleat = Math.floor(aleat);
+    return parseInt(1) + aleat;
 }
 
 // Devuelve el mayor de los números indicados
@@ -98,10 +181,8 @@ function mayor(){
 }
 
 // Devuelve la edad
-function edad(a){
-	var date = new Date();
-	var annoActual = date.getFullYear();
-	return annoActual-a;
+function edad(a, a2){
+	return a2-a;
 }
 
 // Devuelve el nombre sin las tres primeras letras
@@ -119,7 +200,43 @@ function quitarLetras(n){
 
 // Comprueba si el nombre y los apellidos son válidos
 function nombreEsValido(n){
-	if (/^[A-Z][a-z]{2}\\s[A-Z][a-z]{2}+\\s[A-Z][a-z]{2}+$/.test(n)) { // valido
+	if (/^[A-ZÑÁÉÍÓÚ][a-zñáéíóú]+\s[A-ZÑÁÉÍÓÚ][a-zñáéíóú]+\s[A-ZÑÁÉÍÓÚ][a-zñáéíóú]+$/.test(n)) { // valido
+		return true;
+	}
+	else{
+		return false;
+	}
+}
+
+// Devuelve el día de la semana
+function diaSemana(d, m, a){
+	var fecha = new Date(); 
+	// Modifico los valores predeterminados 
+	// de la fecha con los dados por el usuario
+	fecha.setDate(d);
+	fecha.setMonth(m);
+	fecha.setYear(a);
+	// Días de la semana (empieza en domingo 
+	// porque en Date() corresponde al 0)
+	var dias = ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];
+
+	return dias[fecha.getDay()]; 
+}
+
+// Para el mensaje informativo de si 
+// es bisiesto el año o no
+function bisiestoInfo(a){
+	if(esBisiesto(a)){
+		return " es ";
+	}
+	else{
+		return " no es ";
+	}
+}
+
+// Comprueba si un año es bisiesto
+function esBisiesto(a){
+	if (a % 4 == 0 && a % 100 != 0 && a % 400) {
 		return true;
 	}
 	else{
@@ -128,14 +245,36 @@ function nombreEsValido(n){
 }
 
 // Comprueba si el día es válido
-function fechaEsValido(d, m, a){
-	var fecha = d.concat("-"+m.concat("-"+a)); // Uno la fecha entera
-	if (/^(\d{1,2})-(\d{1,2})-(\d{4})$/.test(fecha)) { // válida
+function diaEsValido(d){
+	//d = parseInt(d);
+	if (d > 0 &&  d < 32) { // valido
 		return true;
 	}
-	else{ // inválida
+	else{
 		return false;
+	}	
+}
+
+// Comprueba si el mes es válido
+function mesEsValido(m){
+	//m = parseInt(m);
+	if (m > 0 &&  m < 13) { // valido
+		return true;
 	}
+	else{
+		return false;
+	}	
+}
+
+// Comprueba si el año es válido
+function annoEsValido(a, a2){
+	//a = parseInt(a);
+	if (a > 0 &&  a < a2) { // valido
+		return true;
+	}
+	else{
+		return false;
+	}	
 }
 
 /*
@@ -143,37 +282,3 @@ function fechaEsValido(d, m, a){
 	si mes == 4, 6, 9, 11 --> 30 días
 	si mes 2 --> bisiesto 29 --- sino 28 dias
 */
-
-/*
-	var campos = document.getElementsByName("numero"); // todos los elementos con el nombre "numero"
-	for (var i = campos.length - 1; i >= 0; i--) { // recorre el array
-		if (/^[0-9]+$/.test(campos[i].value)){ // válido
-			if(parseInt(campos[i].value) % 5 == 0){ // divisible por 5
-				document.getElementById("info"+i).innerHTML=" Es múltiplo de 5";
-				document.getElementById("info"+i).style.color="blue";
-			}		
-			if(parseInt(campos[i].value) % 5 != 0){ // no divisible por 5
-				document.getElementById("info"+i).innerHTML=" No es múltiplo de 5";
-				document.getElementById("info"+i).style.color="red";
-			}		
-		}
-		else{	//inválido		
-			document.getElementById("info"+i).innerHTML=" Formato incorrecto";
-			document.getElementById("info"+i).style.color="red";
-		}	
-	}
-*/
-
-/*
-	ordenar:
-	var arr = [65, 22, 69, 99, 12];	
-	return arr.sort(function(a,b){return a-b}); 
-	/* La función anónima dentro del sort() 
-	 * evita que se ordenen de forma alfabética, 
-	 * aunque en este caso no es necesaria realmente 
-	 * (basta con el sort() a secas).
-	 *
-	 * Ejemplo sin función anónima: (3, 4, 1, 32) --> (1, 3, 32, 4)
-	 * Ejemplo con función anónima: (3, 4, 1, 32) --> (1, 3, 4, 32)
-	 * He preferido usarla para practicar con ella. 
-	 */
