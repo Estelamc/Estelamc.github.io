@@ -44,7 +44,7 @@
 
 // Abre una nueva ventana
 function abrirVentana(){
-	var ventanaNueva = window.open(); // Abrimos ventana nueva
+	var ventanaNueva = window.open("", "", "height=500, width=800, top=90, left=90"); // Abrimos ventana nueva
 
 	ventanaNueva.document.open(); // Abrimos documento para escribir
 	
@@ -55,7 +55,7 @@ function abrirVentana(){
 				"<title>Ventana Nueva</title>"+
 			
 				"<!--Llamamos a nuestro código JavaScript externo-->"+
-				"<script type=\"text/javascript\" src=\"js/FuncionVentanaNueva.js\"></script>"+
+				"<script type=\"text/javascript\" src=\"js/hijo.js\"></script>"+
 				
 				"<!--En el caso de que el navegador tenga desactivado"+ 
 				"JavaScript, avisamos de este hecho y decimos como"+ 
@@ -71,10 +71,10 @@ function abrirVentana(){
 					"<br/>Nombre en código del navegador: "+ventanaNueva.navigator.appCodeName+
 				"</p>"+
 				"<form><input type=\"button\" id=\"java\" "+
-					"value=\"Detectar Java\" onclick=\"infoJava();\"/></form>"+
+					"value=\"Detectar Java\"/></form>"+
 
 				"<form><input type=\"button\" id=\"otraVentana\" "+
-					"value=\"Abre otra ventana\" onclick=\"abrirOtraVentana();\"/></form>"+
+					"value=\"Abre otra ventana\"/></form>"+
 			"</body>"+
 		"</html>");	
 
@@ -86,7 +86,7 @@ function ventanaPrincipal(){
 	document.getElementById("contenido").innerHTML = 
 		"<h1>Tarea del Tema 3</h1>"+
 		"<form>"+ 
-			"<input type=\"button\" name=\"abrir\" value=\"Abrir Ventana\" onclick=\"abrirVentana();\" />"+
+			"<input type=\"button\" id=\"abrir\" value=\"Abrir Ventana\" />"+
 			"<br/><br/>Introduzca su nombre y apellidos: <input type=\"text\" id=\"nombre\" />"+
 			"<span id=\"infoN\"></span><br /><br />"+						
 			"Introduzca DÍA de nacimiento: <input type=\"text\" id=\"dia\" />"+
@@ -95,7 +95,7 @@ function ventanaPrincipal(){
 			"<span id=\"infoM\"></span><br /><br />"+
 			"Introduzca AÑO de nacimiento: <input type=\"text\" id=\"anno\" />"+
 			"<span id=\"infoA\"></span><br /><br />"+
-			"<input type=\"button\" name=\"comprobar\" value=\"Comprobar\" onclick=\"info();\" />"+
+			"<input type=\"button\" id=\"comprobar\" value=\"Comprobar\" />"+
 		"</form>";
 }
 
@@ -214,7 +214,7 @@ function diaSemana(d, m, a){
 	// Modifico los valores predeterminados 
 	// de la fecha con los dados por el usuario
 	fecha.setDate(d);
-	fecha.setMonth(m);
+	fecha.setMonth(m-1);
 	fecha.setYear(a);
 	// Días de la semana (empieza en domingo 
 	// porque en Date() corresponde al 0)
@@ -227,10 +227,10 @@ function diaSemana(d, m, a){
 // es bisiesto el año o no
 function bisiestoInfo(a){
 	if(esBisiesto(a)){
-		return " es ";
+		return " era ";
 	}
 	else{
-		return " no es ";
+		return " no era ";
 	}
 }
 
@@ -277,8 +277,16 @@ function annoEsValido(a, a2){
 	}	
 }
 
+window.addEventListener("load", function(){
+	ventanaPrincipal();
+	document.getElementById("comprobar").addEventListener("click", info);
+	document.getElementById("abrir").addEventListener("click", abrirVentana);
+});
+
+
 /*
-	si mes == 1, 3, 5, 7, 8, 10, 12, -> 31 días
-	si mes == 4, 6, 9, 11 --> 30 días
-	si mes 2 --> bisiesto 29 --- sino 28 dias
+	A mejorar:
+		si mes == 1, 3, 5, 7, 8, 10, 12, -> 31 días
+		si mes == 4, 6, 9, 11 --> 30 días
+		si mes 2 --> bisiesto 29 --- sino 28 dias
 */

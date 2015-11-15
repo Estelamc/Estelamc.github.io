@@ -44,7 +44,7 @@
 
 // Informa si Java está habilitado o no
 function infoJava(){
-	var ventanaJava = window.open(); // ventana nueva
+	var ventanaJava = window.open("", "", "height=200, width=400, top=150, left=150"); // ventana nueva
 	
 	ventanaJava.document.open(); // nuevo documento
 
@@ -73,5 +73,11 @@ function infoJava(){
 
 // Abre otra ventana con la dirección y el tamaño indicados
 function abrirOtraVentana(){
-	window.open("http://www.iesgrancapitan.org/portal/", 800, 600);
+	window.open("http://www.iesgrancapitan.org/portal/","", "height=600, width=800");
 }
+
+window.addEventListener("load", function(){
+	document.getElementById("otraVentana").addEventListener("click", abrirOtraVentana);
+	document.getElementById("java").addEventListener("click", infoJava);
+
+});
