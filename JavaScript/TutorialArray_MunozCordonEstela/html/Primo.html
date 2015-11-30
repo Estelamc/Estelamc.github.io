@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<!-- 
+		A prime number is a natural number which has exactly 
+		two distinct natural number divisors: 1 and itself.
+
+		To find all the prime numbers less than or equal to a 
+		given integer n by Eratosthenes’ Sieve:
+
+			Create a list of consecutive integers from two to n: 
+			(2, 3, 4, ..., n).
+			
+			Set p=2, the first prime number.
+			
+			Strike from the list all multiples of p less than or 
+			equal to n. (2p, 3p, 4p, etc.)
+			
+			Set p to first not striked number in the list after p.
+			
+			Repeat steps 3-4 until p*p > n.
+			
+			All the remaining numbers in the list are prime.
+		
+		There is also an animation available.
+
+		Implement the Eratosthenes’ Sieve in JavaScript. 
+		Compute the sum of all primes up to 100 and alert it.
+
+		@author Estela Muñoz Cordón
+		@version 1.0
+	 -->
+	<head>
+		<meta charset="utf-8"/>
+
+		<title>Sumar primos</title>
+		
+		<!--Llamamos a nuestro código JavaScript externo-->
+		<script type="text/javascript" src="../js/Primo.js"></script>
+		
+		<!--En el caso de que el navegador tenga desactivado 
+		JavaScript, avisamos de este hecho y decimos como 
+		solucionarlo, aportando un enlace-->
+		<noscript>JavaScript se encuentra desactivado, actívelo siguiendo los siguientes pasos: 
+			<a href="http://enable-javascript.com/es/">Activar/Desactivar JavaScript</a>
+		</noscript>
+	</head>
+	
+	<body>
+		<div id="info"></div>
+	</body>
+</html>
