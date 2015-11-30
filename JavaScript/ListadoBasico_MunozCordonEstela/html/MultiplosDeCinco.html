@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+	
+	<!-- 
+		Implementa MultiplosDeCinco que pida 7 números 
+		e indique si alguno es múltiplo de 5.
+
+		@author Estela Muñoz Cordón
+		@version 1.0
+	-->
+
+	<head>
+		<meta charset="UTF-8">				
+		
+		<title>M&uacute;ltiplos de 5</title>
+		
+		<!--Llamamos a nuestro código JavaScript externo, 
+		que se encuentra en el archivo "codigo.js"-->
+		<script type="text/javascript" src="../js/MultiplosDeCinco.js"></script>
+		
+		<!--En el caso de que el navegador tenga desactivado 
+		JavaScript, avisamos de este hecho y decimos como 
+		solucionarlo, aportando un enlace-->
+		<noscript>JavaScript se encuentra desactivado, actívelo siguiendo los siguientes pasos: <a href="http://enable-javascript.com/es/">Activar/Desactivar JavaScript</a></noscript>
+	</head>
+
+	<body>
+		<!--document.numeros y document.numeros.numero1-->
+		<p>Indique 7 n&uacute;meros y le dir&eacute; si son m&uacute;ltiplos de 5:</p>
+		<form> 
+			N&uacute;mero 1: <input type="text" name="numero" /><span id="info0" color="red"></span><br />
+			N&uacute;mero 2: <input type="text" name="numero" /><span id="info1" color="red"></span><br />
+			N&uacute;mero 3: <input type="text" name="numero" /><span id="info2" color="red"></span><br />
+			N&uacute;mero 4: <input type="text" name="numero" /><span id="info3" color="red"></span><br />
+			N&uacute;mero 5: <input type="text" name="numero" /><span id="info4" color="red"></span><br />
+			N&uacute;mero 6: <input type="text" name="numero" /><span id="info5" color="red"></span><br />
+			N&uacute;mero 7: <input type="text" name="numero" /><span id="info6" color="red"></span><br /><br />
+			<input type="button" name="comprobar" value="Comprobar" onclick="multiplosDeCinco();" />
+		</form>
+	</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+	
+	<!-- 
+		Implementa DeNumericoATexto que solicite un número del 0 al 99 
+		y lo muestre escrito. Por ejemplo, para 12 mostrar: doce, 
+		para 44 mostrar: cuarenta y cuatro. 
+		Que sea lo más eficiente posible.
+		
+		Implementa MultiplicaImpares que multiplique los 20 
+		primeros números impares y muestre el resultado en pantalla.
+	-->
+
+	<head>
+		<meta charset="UTF-8">				
+		
+		<title>Multiplica Impares</title>
+		
+		<!--Llamamos a nuestro código JavaScript externo, 
+		que se encuentra en el archivo "codigo.js"-->
+		<script type="text/javascript" src="../js/MultiplicaImpares.js"></script>
+		
+		<!--En el caso de que el navegador tenga desactivado 
+		JavaScript, avisamos de este hecho y decimos como 
+		solucionarlo, aportando un enlace-->
+		<noscript>JavaScript se encuentra desactivado, actívelo siguiendo los siguientes pasos: <a href="http://enable-javascript.com/es/">Activar/Desactivar JavaScript</a></noscript>
+	</head>
+
+	<body onload="imparesInfo();">
+		<!--document.numeros y document.numeros.numero1-->
+		<!--<p>Indique un n&uacute;mero. Le dir&eacute; las cifras que tiene y lo mostrar&eacute; al rev&eacute;s:</p>
+		<form> 
+			N&uacute;mero: <input type="text" id="numero" /><span id="info"></span><br /><br />						
+			<input type="button" name="comprobar" value="Comprobar" onclick="numeroInfo();" />
+		</form>-->
+		<p id="info"></p>
+	</body>
+</html>
