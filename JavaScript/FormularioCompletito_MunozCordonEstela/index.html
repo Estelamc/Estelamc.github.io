@@ -1,0 +1,89 @@
+<!--
+	Crea un formulario con todos los tipos de controles y realiza todas
+	las validaciones posibles mediante JavaScript.
+	
+	Utiliza el modelo de registro avanzado de eventos según W3C
+	(addEventListener), así como las expresiones regulares.
+	
+	Asegúrate de validar lo siguiente:
+
+	- Obligatoriedad (campo de texto, opción seleccionada
+	- (checkbox, radio button y selección)
+	- Tipo de dato introducido (numérico...)
+	- Dirección de correo válida
+	- Número de DNI válido
+	- Fecha válida
+	- Número de teléfono
+	- Número de cuenta corriente
+	- URL
+	
+	Asegúrate de que:
+	 1. Al perder el foco de cada control se comprueba su validación.
+	 2. Los errores los muestras mediante css.
+	 3. Al enviar el formulario se realizan TODAS LAS VALIDACIONES, yéndose el foco al primer error.
+	
+	Procura aislar las validaciones del interfaz del usuario (arquitectura
+	de tres capas)
+
+	@author Estela Muñoz Cordón
+	@version 0.1
+-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Estela Muñoz Cordón</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/estilo.css">
+		
+	</head>
+	<body>
+		<h1>Formulario Completito</h1>
+		<form>
+			<br /><label>Nombre:</label><input id="nombre" type="text" placeholder="Nombre y Apellidos"/><span id="errorN"></span>
+			
+			<br /><br /><label>DNI:</label><input id="dni" type="text" placeholder="xxxxxxxx-L"/><span id="errorDNI"></span>
+			
+			<br /><br /><label>Fecha de nacimiento:</label><input id="fecha" type="text" placeholder="dd/mm/yyyy"/><span id="errorF"></span>
+			
+			<br /><br /><label>E-mail:</label><input id="email" type="text" placeholder="tucorreo@email.com"/><span id="errorE"></span>
+			
+			<br /><br /><label>Teléfono:</label><input id="telefono" type="text" placeholder="xxx xx xx xx"/><span id="errorT"></span>
+			
+			<br /><br /><label>Número de cuenta:</label><input id="cuenta" type="text" placeholder="xxxx-xxxx-xx-xxxxxxxxxx" /><span id="errorC"></span>
+			
+			<br /><br /><label>URL:</label><input id="url" type="text" placeholder="www.url.com"/><span id="errorU"></span>
+			
+			<br /><br /><label>Sexo: </label>
+				<input type="radio" id="rB" name="rB" value="mujer" /><label id="subLabel">Mujer</label>
+				<input type="radio" id="rB" name="rB" value="hombre" /><label id="subLabel">Hombre</label><span id="errorS"></span>
+			
+			<br /><br /><label>Idiomas: </label>
+				<input type="checkbox" id="cB" name="cB" value="ingles" /><label id="subLabel">Inglés</label>				
+				<input type="checkbox" id="cB" name="cB" value="frances" /><label id="subLabel">Francés</label><span id="errorI"></span>
+			
+			<br /><br /><label>Provincia: </label>
+				<select id="provincia" name="provincia">
+					<option value="ninguna">Elija una provincia</option>
+					<option value="cordoba">Córdoba</option>
+					<option value="malaga">Málaga</option>
+					<option value="sevilla">Sevilla</option>
+				</select><span id="errorP"></span>
+
+			<br /><br />
+			<!--<button id="enviar">Enviar</button>
+			<button id="reset">Limpiar Campos</button>-->
+			<input type="submit" id="enviar" value="Enviar" />
+			<input type="reset" id="reset" value="Limpiar Campos" />
+		</form>
+		
+		<!--<script type="text/javascript" src="http://code..js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>-->
+		<script type="text/javascript" src="js/principal.js"></script>
+		<noscript>JavaScript se encuentra desactivado, actívelo siguiendo los siguientes pasos: 
+			<a href="http://enable-javascript.com/es/">Activar/Desactivar JavaScript</a>
+		</noscript>
+	</body>
+</html>

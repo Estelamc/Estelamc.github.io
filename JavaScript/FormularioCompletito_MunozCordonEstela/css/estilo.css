@@ -1,0 +1,49 @@
+*{
+	text-align: center;
+}
+
+h1{
+	color: blue;
+	font-weight: bold;
+	transition: 1s all;
+}
+
+h1:hover{
+	text-shadow: 5px 5px 10px grey;
+}
+
+label{
+	color: blue;
+	margin-right: 10px;
+}
+
+#subLabel{
+	color: black;
+	font-weight: normal;
+}
+
+#cB, #rB{
+	margin-right: 5px;
+}
+
+span{
+	margin-left: 10px;
+	color: red;
+}
+
+#enviar, #reset{
+	background-color: blue;
+	border-color: blue;
+	border-radius: 5px 5px;
+	box-shadow: 3px 3px 10px black;
+	color: white;
+	transition: 1s all;
+}
+
+#enviar:hover, #reset:hover{
+	background-color: white;
+	border-color: white;
+	border-radius: 5px 5px;
+	box-shadow: 3px 3px 10px blue;
+	color: blue;
+}
