@@ -1,0 +1,31 @@
+h1{
+	font-size: 3rem;
+}
+
+nav{
+  font-size: 1.2rem;
+}
+
+section{
+  -moz-column-count: 2;
+  -moz-column-gap: 0rem;
+  -moz-column-rule: 0.4rem double #87930B;
+  -o-column-count: 2;
+  -o-column-gap: 0rem;
+  -o-column-rule: 0.4rem double #87930B;
+  -webkit-column-count: 2;
+  -webkit-column-gap: 0rem;
+  -webkit-column-rule: 0.4rem double #87930B;
+}
+
+h2{
+	font-size: 1.1rem;
+}
+
+img{
+  height: 11rem;
+}
+
+section>article>footer>img{
+  height: 10%;
+}

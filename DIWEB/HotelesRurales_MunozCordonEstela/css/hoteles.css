@@ -1,0 +1,137 @@
+*{
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	list-style: none;
+}
+
+body{
+	*padding: 20px;
+	text-align: center;
+	background-color: #432D20;
+	*background-color: #1F1611;
+	font-size: 16px;
+}
+
+h1{
+	color: #47650B;
+	color: #87930B;
+	font-size: 45px;
+	text-shadow: 5px 5px 10px black;/*#1F1611;*/
+	transition: all 1s;
+}
+
+h1:hover{
+	opacity: 0.7;
+	text-shadow: 5px 5px 10px black;
+}
+
+a{
+	color: white;
+}
+
+nav{
+	background-color: #47650B;
+	min-height: 2rem;
+	font-weight: bold;
+}
+
+nav ul li{
+	display: inline-block;
+	margin: 1rem;
+}
+
+nav ul li a:hover{
+	color: #432D20; 
+	*color: #1F1611;
+	*text-shadow: 1px 1px 20px white;
+	*text-decoration: underline;
+}
+
+/*main{
+	*width: 80%;	
+	*margin: 0 auto;
+	vertical-align: middle;
+}*/
+
+section{
+	width: 80%;
+	margin: 0 auto;
+	margin-top: 1.5rem;
+	margin-bottom: 1rem;
+	background: rgba(255,255,255,0.3);
+	border-radius: 10px 10px;
+	box-shadow: 5px 5px 10px black;
+}
+
+h2{
+	color: white;
+	*color: #87930B;
+	text-shadow: 3px 3px 5px black;
+	*color: #47650B;
+	background:  #87930B;
+	*border-radius: 10px 10px 0 0;
+	font-size: 1rem;
+	padding: 1rem;
+	margin-bottom: 0.5rem;
+}
+
+article{
+	*border: thin solid #47650B;
+	border-radius: 15px 15px 0px 0px;
+	margin-bottom: 0.5rem;
+	*background: white;
+}
+
+article>p{
+	margin: 1rem;
+}
+
+button{
+	background-color: #47650B;
+	border: 0.2rem solid #87930B;
+	border-radius: 9rem 1rem;
+	padding: 0.8rem 1.5rem;
+	margin-top: 0.9rem;
+	color: white;
+	box-shadow: 3px 3px 8px #1F1611;
+	*font-weight: bold;
+	font-size: 1.2rem;
+	display: inline;
+	transition: 1s all;
+}
+
+button:hover{
+	background-color: #87930B;
+	border-color: #47650B;
+	color: #1F1611;
+	transform: rotate(-360deg);
+}
+
+strong{
+	color: #87930B;
+	text-shadow: 3px 3px 5px black;
+	margin-right: 0.5rem;
+}
+
+img{
+	margin-top: 0.5rem;
+	margin-bottom: 1rem;
+	width: 80%;
+	border-radius: 40px 5px;
+}
+
+body>footer{
+	background-color: #47650B;
+	color: white;
+	padding: 0.7rem;
+}
+
+h3{
+	font-size: 1rem;
+}
+
+p{
+	margin-top: 0.5rem;
+	font-size: 1.1rem;	
+}
