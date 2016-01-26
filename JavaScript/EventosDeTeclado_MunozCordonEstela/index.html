@@ -1,0 +1,46 @@
+<!--
+	Mediante el registro de eventos recomendado por la W3C, 
+	entrega una página donde muestres información referente 
+	a todos los eventos del Teclado.
+
+	@author Estela Muñoz Cordón
+-->
+<!DOCTYPE html>
+	<head>
+		<meta charset="UTF-8" />
+		
+		<title>Estela Muñoz Cordón</title>
+
+		<link rel="stylesheet" href="css/estilo.css" />
+
+		<!--Llamamos a nuestro código JavaScript externo, 
+		que se encuentra en el archivo "codigo.js"-->
+		<script type="text/javascript" src="js/codigo.js"></script>
+		
+		<!--En el caso de que el navegador tenga desactivado 
+		JavaScript, avisamos de este hecho y decimos como 
+		solucionarlo, aportando un enlace-->
+		<noscript>JavaScript se encuentra desactivado, actívelo siguiendo los siguientes pasos: <a href="http://enable-javascript.com/es/">Activar/Desactivar JavaScript</a></noscript> 
+	</head>
+
+	<body>
+		<header>
+			<h1>Eventos de teclado</h1>
+		</header>
+		
+		<div id="info">
+			<h2>Evento:</h2>
+			<p id="tipoEvento">
+				<strong>keydown:</strong><span id="down"></span>
+				<strong>keypress:</strong><span id="press"></span>
+				<strong>keyup:</strong><span id="up"></span>
+			</p>
+
+			<h2>Carácter Numérico:</h2><span id="caracterCodigo"></span>
+			
+			<h2>Carácter:</h2><span id="letra"></span>
+		</div>
+
+		<p><strong>Nota:</strong> Diferencia las letras en mayúsculas (pruébalo dejando pulsado el "Bloqueo de Mayúsculas").</p>					
+	</body>
+</html>
