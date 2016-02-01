@@ -1,0 +1,72 @@
+<!--
+	- Fíjate en la página 10 de la presentación del tema. 
+	Es el árbol DOM de una página Web concreta. 
+	Crea el documento HTML al que representa.
+	
+		- Indica el número de nodos que tiene
+	
+	- Fíjate en la página 19 de la presentación del tema. 
+	Representa el árbol DOM del documento. 
+	Realiza las siguientes acciones:
+	
+		- Accede al elemento html
+		- Accede al body mediante lastChild
+		- Accede al head mediante la lista childNodes
+		- Averigua el número de hijos de body
+		- Añádele un párrafo con el texto "Hola a todos"
+		- Añádele al principio del body una lista (<ol>) con los nombres de la pareja a la que perteneces. 
+		- Elimina el último párrafo del documento original ("párrafo DOM 3");
+
+	@author Estela Muñoz Cordón
+-->
+
+<!--
+	Respuesta 2: (Antes de mis modificaciones para darle funcionalidad con JS)
+
+							Document
+								|
+							Root element: 
+							<html>
+								|
+		_____________________________________________________
+		|													|
+	Element: 											Element:										
+	<head>												<body>
+		|													|
+	Element: 								   __________________________________________
+	<title>									   |				   |					|
+		|									Element:			Element:			Element:			
+	Text: 		 							  <p>				 <p>			      <p>
+	"Titulo DOM"							   |			 	  |					   |
+											Text: 				Text: 				 Text: 
+										"Parrafo DOM"	"Parrafo DOM segundo"	"Parrafo DOM tres"
+
+
+	NOTA: para mayor claridad, vease "ArbolDom-pg19.jpg"	
+-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Titulo DOM</title>	
+		<link rel="stylesheet" type="text/css" href="../css/estilo.css">	
+	</head>
+	<body>
+		<P>Parrafo DOM</P>
+		<P>Parrafo DOM segundo</P>
+		<P>Parrafo DOM tres</P>
+
+		<div id="info"></div>
+
+		<div id="botones">
+			<button id="b1">Borrar tercer párrafo</button>
+			<button id="b2">Crear párrafo nuevo</button>		
+			<button id="b3">Crear listado al principio</button>
+			<button id="hijos">Calcular nodos hijos de Body</button>
+		</div>
+
+		<script type="text/javascript" src="../js/codigo.js"></script>
+		<noscript></noscript>
+	</body>
+</html>

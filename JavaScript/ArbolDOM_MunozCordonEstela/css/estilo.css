@@ -1,0 +1,29 @@
+/*
+	- Fíjate en la página 10 de la presentación del tema. Es el árbol DOM de una página Web concreta. Crea el documento HTML al que representa.
+	
+		- Indica el número de nodos que tiene
+	
+	- Fíjate en la página 19 de la presentación del tema. Representa el árbol DOM del documento. Realiza las siguientes acciones:
+	
+		- Accede al elemento html
+		- Accede al body mediante lastChild
+		- Accede al head mediante la lista childNodes
+		- Averigua el número de hijos de body
+		- Añádele un párrafo con el texto "Hola a todos"
+		- Añádele al principio del body una lista (<ol>) con los nombres de la pareja a la que perteneces. 
+		- Elimina el último párrafo del documento original ("párrafo DOM 3");
+
+	@author Estela Muñoz Cordón
+*/
+
+body{
+	padding: 30px;
+}
+
+#botones{
+	padding: 10px;
+}
+
+button{
+	margin: 6px;
+}
