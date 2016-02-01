@@ -1,0 +1,49 @@
+h1{
+	font-size: 4.5rem;
+}
+
+nav{
+	padding: 0.5rem;
+  font-size: 1.4rem;
+}
+
+nav>ul>li>a{
+  margin: 1rem;
+}
+
+section{
+  -moz-column-count: 3;
+  -o-column-count: 3;
+  -webkit-column-count: 3;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+section>article{
+  padding: 1.5rem;
+}
+
+section>article>header{
+  padding: 1rem;
+}
+
+section>article>p{
+    font-size: 1.5rem;
+}
+
+h2{
+  font-size: 1.3rem;
+  border-radius: 1rem;
+}
+
+img{
+  height: 11rem;
+  width: 18rem;
+}
+
+button{
+  font-size: 1.7rem;
+}
+
+
+
