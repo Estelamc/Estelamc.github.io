@@ -68,7 +68,6 @@ input{
 	margin-bottom: 1.4rem;	
 }
 
-<<<<<<< HEAD
 input:required{
 	border: 2px solid red;
 }
@@ -77,8 +76,6 @@ input:focus{
 	box-shadow: 3px 3px 19px grey;
 }
 
-=======
->>>>>>> origin/master
 #reservar{
 	background-color: #47650B;
 	border: 0.2rem solid #87930B;
