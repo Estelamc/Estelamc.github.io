@@ -82,7 +82,6 @@ input:focus{
 	border-radius: 9rem 1rem;
 	padding: 0.5rem 0.9rem;
 	color: white;
-	*font-weight: bold;
 	display: inline;
 	box-shadow: 3px 3px 20px grey;
 	transition: 1s all;
