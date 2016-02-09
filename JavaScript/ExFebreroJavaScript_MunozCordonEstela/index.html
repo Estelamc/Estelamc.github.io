@@ -1,0 +1,34 @@
+<!--
+	Estela Muñoz Cordón
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Estela Muñoz Cordón</title>
+	<link rel="stylesheet" type="text/css" href="css/estilo.css">
+</head>
+<body>
+	<form>
+		<label>Nombre: </label><input id="nombre" type="text" pholder="Nombre del usario"><span id="errorN"></span></br>
+		<label>Apellidos: </label><input id="apellidos" type="text" pholder="Apellidos del usario"><span id="errorA"></span></br>
+		<label>DNI: </label><input id="dni" type="text" pholder="XXXXXXXXXL"><span id="errorD"></span></br>
+		<label>Sexo: </label>
+		<select id="sexo">
+			<option value=""> </option>
+			<option value="hombre">Hombre</option>
+			<option value="mujer">Mujer</option>
+		</select><span id="errorS"></span></br>
+		<input id="aceptar" type="checkbox" value="si"><label>Acepto las condiciones</label><span id="errorAc"></span>
+	</form>
+	<button id="nuevo">Nuevo Usuario</button>
+	<button id="limpiar">Limpiar</button>
+
+	<div id="info"></div>
+
+	<!--Código js-->
+	<script type="text/javascript" src="js/usuario.js"></script>
+	<!--Si JS está desactivado-->
+	<noscript>Active javaScript para poder ver el contenido de la página con toda su funcionalidad</noscript>
+</body>
+</html>
