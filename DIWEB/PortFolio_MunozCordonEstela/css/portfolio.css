@@ -1,0 +1,286 @@
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+body{
+  *font-family: 'Pacifico', cursive;
+  *font-family: 'Black Ops One', cursive;
+  *font-family: 'Lato', sans-serif;
+  *font-family: 'Roboto', sans-serif;
+  *font-family: 'Sniglet', cursive;
+  *font-family: 'Elsie', cursive;
+  *font-family: 'Ubuntu Mono',;
+  font-family: 'Rancho', cursive;
+  *font-family: 'Parisienne', cursive;
+  *font-family: 'Baumans', cursive;
+  *font-family: 'Nova Slim', cursive;
+  *font-family: 'Nova Oval', cursive;
+  font-size: 16px;
+  background-color:  rgba(0,0,0,0.1);
+}
+
+header{
+ color: #056839;
+ padding: 0.6rem;
+ display: flex; 
+ flex-flow: row;
+ background: url('../img/ondas-t.png'); 
+ background-repeat: no-repeat;
+ background-size: 8em;  
+}
+
+header>img{
+  order: 1;
+  width: 30%;
+  height: 30%;
+}
+
+h1{
+  width: 60%;
+  margin-left: 1.6rem;
+  text-align: center;
+  order: 2;
+  font-size: 1.5rem;  
+}
+
+h1, h2{
+  font-family: 'Nova Oval', cursive;
+}
+
+/* NAV */
+
+nav{
+  text-align: center;
+}
+
+nav ul li{ 
+	display: inline-block;
+}
+
+nav ul li{
+  margin-top: 0.1rem;
+  margin-left: 0.15em; 
+}
+
+nav  ul  li  a{
+  display: block;
+	background-color: rgba(0,0,0,0.1);
+	color: black; 
+  border: 1px solid white;
+	padding: 10px 12px;
+  transition: 1s all;
+}
+
+nav  ul  li  a:hover{
+	box-shadow: 3px 3px 10px #056839; 
+}
+
+#menu{
+  margin-left: 0.6rem;
+  display: none;
+}
+
+#contenido{
+  background-color: white;
+}
+
+main{
+  margin: 0 auto;
+  width: 85%;
+  padding: 1rem;
+  text-align: justify;
+}
+
+h2{
+  text-align: center;
+  color:  #056839;
+  color: #BF96B3;
+}
+
+p{
+  margin: 0.8rem 0;
+}
+
+span{
+  color:  #056839;
+}
+
+footer{
+  text-align: center;
+}
+
+footer>img{
+  margin: 1rem;
+  transition: 1s all;
+}
+
+footer>img:hover{
+  transform: rotate(-360deg);
+}
+
+/* RESPONSIVE */
+
+@media screen and (min-width:480px){
+  header{
+    display: flex;
+    padding: 0.5rem;
+  }  
+  header>img{
+    flex: 5rem;
+    padding: 0.2rem;
+    order: 1;
+  }
+  h1{
+    font-size: 1.7rem;
+    flex: 18rem;
+    order: 2;
+    margin-left: 0rem;
+    padding: 0.5rem;
+  }
+  h2{
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+  #contenido{
+    display: flex;
+  }
+  nav{
+    order: 1;
+    text-align: left;
+    width: 3rem;
+  }
+  nav ul li{
+    display: block;
+  }  
+  nav ul li a{
+    display: inline-block;
+  }
+  main{
+    order: 2;
+    vertical-align: top;
+    width: 70%;
+  }
+}
+
+@media screen and (min-width:736px){
+  header>img{
+    flex: 2rem;
+    height: 9rem;
+  }
+  h1{
+    flex: 30rem;
+    margin: 0;
+    padding: 0;
+    padding: 3rem;
+    font-size: 2.46rem;
+    margin-left: 1rem
+  }
+  header{
+    padding: 0.8rem;
+    font-size: 1.5rem;
+  }
+  #contenido{
+    display: block;
+  }
+  main{
+    font-size: 1.3rem; 
+    width: 80%;
+  }
+  footer{
+    padding: 1rem;
+  }
+  nav{
+    text-align: center;
+    width: 100%;
+  }
+  nav ul li{
+    display: inline-block;
+  }
+  nav ul li a{
+    margin-top: 0.2rem;
+    display: block;
+  }
+  #menu{
+    display: inline;
+    margin-left: 0.8rem;
+    font-size: 1.5rem;
+  }
+  h2{
+    margin: 0.8rem;
+    margin-bottom: 1.6rem;
+  }
+  footer>img{
+    width: 3.5%;
+  }
+}
+
+@media screen and (min-width:980px){
+  h1{
+    font-size: 3.3rem;
+  }
+  h2{
+    margin:1.8rem;
+  }
+}
+
+@media screen and (min-width:1028px){
+  h1{
+    font-size: 3.5rem;
+    margin-left: 2.9rem;
+  }
+  header>img{
+   flex: 10rem;
+   height: 100%;
+  }
+  header{
+    padding: 1.5rem;
+    font-size: 1.7rem;
+  }
+  #menu{
+    font-size: 1.8rem;
+  }
+  main{
+    width: 80%;
+    font-size: 1.5rem;
+  }
+  p{
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (min-width:1680px){
+  header{
+    font-size: 1.7rem;
+  }
+  header>img{
+    *flex: 1rem;
+  }
+  h1{
+    flex: 70rem;
+    font-size: 5rem;
+    padding: 1.8rem;
+  }
+  main{
+    width: 70%;
+  }
+  p{
+    padding: 0.3rem;
+  }
+  footer>img{
+    width: 3%;
+  }  
+}
+
+
+
+
+
+
+
+
+
+
+

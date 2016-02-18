@@ -1,0 +1,184 @@
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+body{
+  *font-family: 'Pacifico', cursive;
+  *font-family: 'Black Ops One', cursive;
+  *font-family: 'Lato', sans-serif;
+  *font-family: 'Roboto', sans-serif;
+  *font-family: 'Sniglet', cursive;
+  *font-family: 'Elsie', cursive;
+  *font-family: 'Ubuntu Mono',;
+  font-family: 'Rancho', cursive;
+  *font-family: 'Parisienne', cursive;
+  *font-family: 'Baumans', cursive;
+  *font-family: 'Nova Slim', cursive;
+  *font-family: 'Nova Oval', cursive;
+  font-size: 16px;   
+  background: url('../img/ondas-t.png'); 
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 130% -3%; 
+  color: #494949;
+}
+
+header{
+  min-height: 1rem;
+}
+
+img{
+  visibility: hidden;
+  position: relative;
+  display: block;
+  padding: 1rem;
+  width: 38%;
+  animation-name: nenufar;
+  -webkit-animation-name: nenufar; 
+  -moz-animation-name: nenufar;
+  -o-animation-name: nenufar; 
+  animation-delay: 1s;   
+  -o-animation-delay: 1s;
+  -moz-animation-delay: 1s;
+  -webkit-animation-delay: 1s;
+  animation-duration: 3s;
+  -moz-animation-duration: 3s;
+  -o-animation-duration: 3s;
+  -webkit-animation-duration: 3s;
+  animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  -o-animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+}
+
+@keyframes nenufar{
+  from{
+    top: -500; 
+    visibility: hidden;
+  }
+  to{
+    top: 0px;
+    visibility: visible;
+  }
+}
+
+main{
+  padding: 0.7rem;
+  text-align: center;
+}
+
+h1{
+  margin-bottom: 0.4rem;
+  margin-top: 1.5rem;
+  color: #076633;
+  transition: all 1s;
+}
+
+h1:hover{
+  color: #BF96B3;
+}
+
+h2{
+  font-size: 1.2rem;  
+  margin-top: 0.9rem;
+}
+
+span{
+  display: inline-block;
+  min-height: 0.104rem;
+  width: 35%;
+  margin-left: 0.6rem;
+  margin-right: 0.6rem;
+  background-color: #076633;
+}
+
+@media screen and (min-width:480px){
+  img{
+    width: 25%;
+    padding: 0.5rem;
+  }
+  
+  body{
+    background-position: -15% -30%;
+  }
+  
+  h1{
+    font-size: 2.5rem;
+    margin-top: 0.5rem;
+  }
+}
+
+@media screen and (min-width:736px){
+  body{     
+    background-size: 40rem;
+    background-position: -50% -10%; 
+  }
+  
+  h1{
+    font-size: 3.4rem;
+    margin-top: 0rem;
+  }
+}
+
+@media screen and (min-width:840px){
+  body{     
+    background-position: -30% -1%; 
+  }
+  
+   h1{
+    font-size: 3.6rem;
+    margin-top: 1rem;
+  }
+}
+
+@media screen and (min-width:980px){
+ body{     
+    background-position: -15% -1%; 
+  }
+  
+  h1{
+    font-size: 4.5rem;
+    margin-top: 2rem;
+  }
+  
+  h2{
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+  }
+}
+
+@media screen and (min-width:1028px){
+ body{     
+    background-size: 50rem;
+    background-position: -15% -5%; 
+  }
+  
+  h1{
+    font-size: 5rem;
+  }
+  
+   h2{
+    font-size: 1.5rem;
+     margin-top: 2rem;
+  }
+}
+
+@media screen and (min-width:1680px){
+  body{     
+    background-size: 60rem;
+    background-position: -10% 1%; 
+  }
+  
+  h1{
+    font-size: 7.5rem;
+    margin-top: 2.2rem;
+  }
+  
+  h2{
+    font-size: 2.5rem;
+     margin-top: 2.5rem;
+  }
+}

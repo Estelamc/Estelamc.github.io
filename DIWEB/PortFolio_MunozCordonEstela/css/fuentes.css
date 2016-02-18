@@ -1,0 +1,9 @@
+@font-face{
+  font-family: 'miFuente';
+  src: url('../fonts/FinelinerScript.otf') format('opentype'); 
+}
+
+@font-face{
+  font-family: 'miFuente2';
+  src: url('../fonts/YummyCupcakes.ttf') format('truetype'); 
+}
