@@ -1,6 +1,11 @@
-/*
-	Estela Muñoz Cordón
-*/
+/**
+ *	Estela Muñoz Cordón
+ *
+ * Añadida funcionalidad 
+ * para borrar el listado
+ * y el mensaje de información
+ *
+ */
 
 (function(){
 	
