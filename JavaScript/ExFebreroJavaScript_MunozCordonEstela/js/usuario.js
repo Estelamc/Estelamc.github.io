@@ -3,56 +3,14 @@
 */
 
 (function(){
-	//--------- USUARIO ---------\\	
 	
-	// Variable (para la información del usuario)
-	var i = document.getElementById("info");
+	//--------- VARIABLES ---------\\
 
-	// Variables para el DOM
-	var html = document.documentElement,
-		body = html.lastChild,
-		ul = document.createElement("ul"),
-		e = 0, // elemento de la lista (contador de elementos li) 
-		lista = document.getElementsByTagName("li"); 
-	// Agregamos la lista al DOM
-	body.appendChild(ul);
-
-	// Constructor de Usuario
-	function Usuario(nombre, apellidos, dni, sexo){
-		this.nombre = nombre;
-		this.apellidos = apellidos;
-		this.dni = dni;
-		this.sexo = sexo;
-	}
-
-	// Muestra el usuario
-	Usuario.prototype.mostrar = function(){
-		i.innerHTML = '<br>Nombre: '+this.nombre+
-		'<br>Apellidos: '+this.apellidos+
-		'<br>DNI: '+this.dni+
-		'<br>Sexo: '+this.sexo+'<br><br>'; 
-	}
-
-	// Agrega un elemento a la lista del DOM
-	Usuario.prototype.listItem = function(){
-		e++;
-		var li = document.createElement("li");
-		var text = document.createTextNode('- Elemento de la lista '+e+
-			': '+this.nombre+' '+
-			this.apellidos+' '+this.dni+' '+this.sexo);
-		ul.appendChild(li.appendChild(text));
-		var br = document.createElement("br");
-		ul.appendChild(br);
-	}
-
-
-	//--------- FORMULARIO ---------\\
-
-	// Variables
-	var n, 
-		a, 
-		d, 
-		s, 
+	var i = document.getElementById("info"),
+		n = document.getElementById("nombre"), 
+		a = document.getElementById("apellidos"), 
+		d = document.getElementById("dni"), 
+		s = document.getElementById("sexo"), 
 		ac = document.getElementById("aceptar"),
 		eN = document.getElementById("errorN"),
 		eA = document.getElementById("errorA"),
@@ -62,44 +20,63 @@
 		bU = document.getElementById("nuevo"),
 		bL = document.getElementById("limpiar");
 
+	// Variables para el DOM
+	var html = document.documentElement,
+		body = html.lastChild,
+		ul = document.createElement("ul"),
+		e = 0, // elemento de la lista (contador de elementos li) 
+		lista = document.getElementsByTagName("li"); 
+	// Agregamos la lista al DOM
+	body.appendChild(ul);	
+
+
+	//--------- FORMULARIO ---------\\
+
 	// Crea el usuario
 	function crearUsuario(){
-		n = document.getElementById("nombre").value;
-		a = document.getElementById("apellidos").value;
-		d = document.getElementById("dni").value;
-		s = document.getElementById("sexo").value;
-
 		validarAceptado();
 		validarApellidos();
 		validarNombre();
 		validarSexo();
 		validarDni();
 
-		if (!esVacio(n) && !esVacio(d) && !esVacio(a) && esAceptado() 
-			&& esSexoCorrecto() && esCampoCorrecto(/^([A-Z]|[a-z]|[0-9]|-|_){4,}$/, n) 
-			&& esCampoCorrecto(/^[0-9]{8}[A-Z]$/, d)) {
-			var usuarioNuevo = new Usuario(n, a, d, s);
+		if (eA.innerHTML == "" && eN.innerHTML == "" && eD.innerHTML == "" 
+			&& eS.innerHTML == "" && eAc.innerHTML == ""){
+			var usuarioNuevo = new Usuario(n.value.trim(), a.value.trim(), d.value.trim(), s.value.trim());
 			usuarioNuevo.mostrar();
 			usuarioNuevo.listItem();
 		}		
 	}
 
 	// Borra los datos
-	function limpiarCampos(){
-		n = document.getElementById("nombre").value = "";
-		a = document.getElementById("apellidos").value = "";
-		d = document.getElementById("dni").value = "";
-		s = document.getElementById("sexo").value = "";
+	function limpiar(){
+		limpiarControles();
+		limpiarErrores();
+		limpiarDiv();	
+		borrarLista();			
+	}
+
+	// Borra los valores de los campos
+	function limpiarControles(){
+		n.value = "";
+		a.value = "";
+		d.value = "";
+		s.value = "";
+		deseleccionarCasilla();	
+	}
+
+	// Borra los mensajes de error
+	function limpiarErrores(){
 		eN.innerHTML = "";
 		eA.innerHTML = "";
 		eD.innerHTML = "";
 		eS.innerHTML = "";
 		eAc.innerHTML = "";
-		i.innerHTML = "";
+	}
 
-		borrarLista();
-		
-		deseleccionarCasilla();		
+	// Borra el mensaje de información
+	function limpiarDiv(){
+		i.innerHTML = "";
 	}
 
 	// Deselecciona el checkbox
@@ -119,46 +96,35 @@
 		e = 0;
 	}
 
+
 	// -------- VALIDACIONES -------- \\
 
 	// Comprobar si se han aceptado las condiciones
 	function esAceptado(){
-		if (ac.checked) { // seleccionado
-			return true; 
-		}
-		return false;
+		return ac.checked;
 	}
 
 	// Comprueba si el campo está vacío
 	function esVacio(campo){
-		if (campo == "" || campo == " " || campo.length == 0) {
-			return true;
-		}
-		return false;
+		return (campo == "" || campo == " " || campo.length == 0);
 	}
 
 	// Comprueba si el campo es correcto
 	function esCampoCorrecto(patron, campo){
-		if (patron.test(campo)) {
-			return true;
-		}
-		return false;
+		return patron.test(campo);
 	}
 
 	// Comprueba si el sexo es correcto
-	function esSexoCorrecto(){
-		if (s == "hombre" || s == "mujer") {
-			return true;
-		}
-		return false;
+	function esSexoCorrecto(){		
+		return (s.value == "hombre" || s.value == "mujer");
 	}
 
 	// Comprueba si hay errores en el nombre
 	function validarNombre(){ // 
-		if (esVacio(n)){
+		if (esVacio(n.value.trim())){
 			eN.innerHTML = "El nombre no puede estar vacío";
 		}
-		else if(!esCampoCorrecto(/^([A-Z]|[a-z]|[0-9]|-|_){4,}$/, n)){
+		else if(!esCampoCorrecto(/^([A-Z]|[a-z]|[0-9]|-|_){4,}$/, n.value.trim())){
 			eN.innerHTML = "El nombre requiere 4 caracteres como mínimo y pueder estar compuesto de letras(mayúsculas y minúsculas), números, guiones y subrayados";
 		}
 		else{
@@ -168,7 +134,7 @@
 
 	// Comprueba si hay errores en los apellidos
 	function validarApellidos(){
-		if (esVacio(a)){
+		if (esVacio(a.value.trim())){
 			eA.innerHTML = "Los apellidos no pueden estar vacíos";
 		}
 		else{
@@ -178,10 +144,10 @@
 
 	// Comprueba si hay errores en el DNI
 	function validarDni(){
-		if (esVacio(d)){
+		if (esVacio(d.value.trim())){
 			eD.innerHTML = "El DNI no puede estar vacío";
 		}
-		else if(!esCampoCorrecto(/^[0-9]{8}[A-Z]$/, d)){
+		else if(!esCampoCorrecto(/^[0-9]{8}[A-Za-z]$/, d.value.trim())){
 			eD.innerHTML = "El DNI debe estar formado por 8 números y una letra mayúscula";
 		}
 		else{
@@ -210,25 +176,44 @@
 	}
 
 	// Validar cada campo al perder el foco
-	document.getElementById("nombre").addEventListener("blur", function(){
-		n = document.getElementById("nombre").value;
-		validarNombre();
-	});
-	document.getElementById("apellidos").addEventListener("blur", function(){
-		a = document.getElementById("apellidos").value;
-		validarApellidos();
-	});
-	document.getElementById("dni").addEventListener("blur", function(){
-		d = document.getElementById("dni").value;
-		validarDni();
-	});
-	document.getElementById("sexo").addEventListener("blur", function(){
-		s = document.getElementById("sexo").value;
-		validarSexo();
-	});
+	n.addEventListener("blur", validarNombre);
+	a.addEventListener("blur", validarApellidos);
+	d.addEventListener("blur", validarDni);
+	s.addEventListener("blur", validarSexo);
 	ac.addEventListener("blur", validarAceptado);
 
 	// Agregar funcionalidad a los botones
 	bU.addEventListener("click", crearUsuario);
-	bL.addEventListener("click", limpiarCampos);
+	bL.addEventListener("click", limpiar);
+
+
+	//--------- USUARIO ---------\\	
+	
+	// Constructor de Usuario
+	function Usuario(nombre, apellidos, dni, sexo){
+		this.nombre = nombre;
+		this.apellidos = apellidos;
+		this.dni = dni;
+		this.sexo = sexo;
+	}
+
+	// Muestra el usuario
+	Usuario.prototype.mostrar = function(){
+		i.innerHTML = '<br>Nombre: '+this.nombre+
+		'<br>Apellidos: '+this.apellidos+
+		'<br>DNI: '+this.dni+
+		'<br>Sexo: '+this.sexo+'<br><br>'; 
+	}
+
+	// Agrega un elemento a la lista del DOM
+	Usuario.prototype.listItem = function(){
+		e++;
+		var li = document.createElement("li");
+		var text = document.createTextNode('- Elemento de la lista '+e+
+			': '+this.nombre+' '+
+			this.apellidos+' '+this.dni+' '+this.sexo);
+		ul.appendChild(li.appendChild(text));
+		var br = document.createElement("br");
+		ul.appendChild(br);
+	}
 })();
