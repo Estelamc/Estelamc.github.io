@@ -6,28 +6,27 @@
 	
 	//--------- VARIABLES ---------\\
 
-	var i = document.getElementById("info"),
-		n = document.getElementById("nombre"), 
-		a = document.getElementById("apellidos"), 
-		d = document.getElementById("dni"), 
-		s = document.getElementById("sexo"), 
-		ac = document.getElementById("aceptar"),
-		eN = document.getElementById("errorN"),
-		eA = document.getElementById("errorA"),
-		eD = document.getElementById("errorD"),
-		eS = document.getElementById("errorS"),
-		eAc = document.getElementById("errorAc"),
-		bU = document.getElementById("nuevo"),
-		bL = document.getElementById("limpiar");
-
-	// Variables para el DOM
-	var html = document.documentElement,
-		body = html.lastChild,
+	var informacion = document.getElementById("info"),
+		nombre = document.getElementById("nombre"), 
+		apellidos = document.getElementById("apellidos"), 
+		dni = document.getElementById("dni"), 
+		sexo = document.getElementById("sexo"), 
+		aceptacion = document.getElementById("aceptar"),
+		errorNombre = document.getElementById("errorN"),
+		errorApellidos = document.getElementById("errorA"),
+		errorDni = document.getElementById("errorD"),
+		errorSexo = document.getElementById("errorS"),
+		errorAceptacion = document.getElementById("errorAc"),
+		botonCrear = document.getElementById("nuevo"),
+		botonLimpiar = document.getElementById("limpiar"),
+		// Variables para el DOM
 		ul = document.createElement("ul"),
-		e = 0, // elemento de la lista (contador de elementos li) 
+		contador = 0, // elemento de la lista (contador de elementos li) 
+		// Todos los elementos de la lista, para borrarlos luego
 		lista = document.getElementsByTagName("li"); 
-	// Agregamos la lista al DOM
-	body.appendChild(ul);	
+	
+	// Agregamos el <ul> para la lista al DOM
+	document.documentElement.lastChild.appendChild(ul);	
 
 
 	//--------- FORMULARIO ---------\\
@@ -40,9 +39,9 @@
 		validarSexo();
 		validarDni();
 
-		if (eA.innerHTML == "" && eN.innerHTML == "" && eD.innerHTML == "" 
-			&& eS.innerHTML == "" && eAc.innerHTML == ""){
-			var usuarioNuevo = new Usuario(n.value.trim(), a.value.trim(), d.value.trim(), s.value.trim());
+		if (errorApellidos.innerHTML == "" && errorNombre.innerHTML == "" && errorDni.innerHTML == "" 
+			&& errorSexo.innerHTML == "" && errorAceptacion.innerHTML == ""){
+			var usuarioNuevo = new Usuario(nombre.value.trim(), apellidos.value.trim(), dni.value.trim(), sexo.value.trim());
 			usuarioNuevo.mostrar();
 			usuarioNuevo.listItem();
 		}		
@@ -53,36 +52,37 @@
 		limpiarControles();
 		limpiarErrores();
 		limpiarDiv();	
-		borrarLista();			
+		borrarLista();
+		contador = 0; // reinicia el contador			
 	}
 
 	// Borra los valores de los campos
 	function limpiarControles(){
-		n.value = "";
-		a.value = "";
-		d.value = "";
-		s.value = "";
+		nombre.value = "";
+		apellidos.value = "";
+		dni.value = "";
+		sexo.value = "";
 		deseleccionarCasilla();	
 	}
 
 	// Borra los mensajes de error
 	function limpiarErrores(){
-		eN.innerHTML = "";
-		eA.innerHTML = "";
-		eD.innerHTML = "";
-		eS.innerHTML = "";
-		eAc.innerHTML = "";
+		errorNombre.innerHTML = "";
+		errorApellidos.innerHTML = "";
+		errorDni.innerHTML = "";
+		errorSexo.innerHTML = "";
+		errorAceptacion.innerHTML = "";
 	}
 
 	// Borra el mensaje de información
 	function limpiarDiv(){
-		i.innerHTML = "";
+		informacion.innerHTML = "";
 	}
 
 	// Deselecciona el checkbox
 	function deseleccionarCasilla(){
 		if (esAceptado()) { // es seleccionado
-			ac.checked=false;
+			aceptacion.checked=false;
 		}
 	}
 
@@ -101,7 +101,7 @@
 
 	// Comprobar si se han aceptado las condiciones
 	function esAceptado(){
-		return ac.checked;
+		return aceptacion.checked;
 	}
 
 	// Comprueba si el campo está vacío
@@ -116,75 +116,75 @@
 
 	// Comprueba si el sexo es correcto
 	function esSexoCorrecto(){		
-		return (s.value == "hombre" || s.value == "mujer");
+		return (sexo.value == "hombre" || sexo.value == "mujer");
 	}
 
 	// Comprueba si hay errores en el nombre
 	function validarNombre(){ // 
-		if (esVacio(n.value.trim())){
-			eN.innerHTML = "El nombre no puede estar vacío";
+		if (esVacio(nombre.value.trim())){
+			errorNombre.innerHTML = "El nombre no puede estar vacío";
 		}
-		else if(!esCampoCorrecto(/^([A-Z]|[a-z]|[0-9]|-|_){4,}$/, n.value.trim())){
-			eN.innerHTML = "El nombre requiere 4 caracteres como mínimo y pueder estar compuesto de letras(mayúsculas y minúsculas), números, guiones y subrayados";
+		else if(!esCampoCorrecto(/^([A-Z]|[a-z]|[0-9]|-|_){4,}$/, nombre.value.trim())){
+			errorNombre.innerHTML = "El nombre requiere 4 caracteres como mínimo y pueder estar compuesto de letras(mayúsculas y minúsculas), números, guiones y subrayados";
 		}
 		else{
-			eN.innerHTML = "";
+			errorNombre.innerHTML = "";
 		}
 	}
 
 	// Comprueba si hay errores en los apellidos
 	function validarApellidos(){
-		if (esVacio(a.value.trim())){
-			eA.innerHTML = "Los apellidos no pueden estar vacíos";
+		if (esVacio(apellidos.value.trim())){
+			errorApellidos.innerHTML = "Los apellidos no pueden estar vacíos";
 		}
 		else{
-			eA.innerHTML = "";
+			errorApellidos.innerHTML = "";
 		}
 	}
 
 	// Comprueba si hay errores en el DNI
 	function validarDni(){
-		if (esVacio(d.value.trim())){
-			eD.innerHTML = "El DNI no puede estar vacío";
+		if (esVacio(dni.value.trim())){
+			errorDni.innerHTML = "El DNI no puede estar vacío";
 		}
-		else if(!esCampoCorrecto(/^[0-9]{8}[A-Za-z]$/, d.value.trim())){
-			eD.innerHTML = "El DNI debe estar formado por 8 números y una letra mayúscula";
+		else if(!esCampoCorrecto(/^[0-9]{8}[A-Za-z]$/, dni.value.trim())){
+			errorDni.innerHTML = "El DNI debe estar formado por 8 números y una letra";
 		}
 		else{
-			eD.innerHTML = "";
+			errorDni.innerHTML = "";
 		}
 	}
 
 	// Comprueba si hay errores en el sexo
 	function validarSexo(){
 		if (!esSexoCorrecto()){
-			eS.innerHTML = "Selecciona si eres hombre o mujer";
+			errorSexo.innerHTML = "Selecciona si eres hombre o mujer";
 		}
 		else{
-			eS.innerHTML = "";
+			errorSexo.innerHTML = "";
 		}
 	}
 
 	// Comprueba si hay errores en la aceptación
 	function validarAceptado(){
 		if (!esAceptado()) {
-			eAc.innerHTML = "Debes aceptar las condiciones";
+			errorAceptacion.innerHTML = "Debes aceptar las condiciones";
 		}
 		else{
-			eAc.innerHTML = "";
+			errorAceptacion.innerHTML = "";
 		}
 	}
 
 	// Validar cada campo al perder el foco
-	n.addEventListener("blur", validarNombre);
-	a.addEventListener("blur", validarApellidos);
-	d.addEventListener("blur", validarDni);
-	s.addEventListener("blur", validarSexo);
-	ac.addEventListener("blur", validarAceptado);
+	nombre.addEventListener("blur", validarNombre);
+	apellidos.addEventListener("blur", validarApellidos);
+	dni.addEventListener("blur", validarDni);
+	sexo.addEventListener("blur", validarSexo);
+	aceptacion.addEventListener("blur", validarAceptado);
 
 	// Agregar funcionalidad a los botones
-	bU.addEventListener("click", crearUsuario);
-	bL.addEventListener("click", limpiar);
+	botonCrear.addEventListener("click", crearUsuario);
+	botonLimpiar.addEventListener("click", limpiar);
 
 
 	//--------- USUARIO ---------\\	
@@ -199,7 +199,7 @@
 
 	// Muestra el usuario
 	Usuario.prototype.mostrar = function(){
-		i.innerHTML = '<br>Nombre: '+this.nombre+
+		informacion.innerHTML = '<br>Nombre: '+this.nombre+
 		'<br>Apellidos: '+this.apellidos+
 		'<br>DNI: '+this.dni+
 		'<br>Sexo: '+this.sexo+'<br><br>'; 
@@ -207,13 +207,14 @@
 
 	// Agrega un elemento a la lista del DOM
 	Usuario.prototype.listItem = function(){
-		e++;
-		var li = document.createElement("li");
-		var text = document.createTextNode('- Elemento de la lista '+e+
-			': '+this.nombre+' '+
-			this.apellidos+' '+this.dni+' '+this.sexo);
-		ul.appendChild(li.appendChild(text));
-		var br = document.createElement("br");
-		ul.appendChild(br);
+		contador++;
+		// Nodo de texto para el elemento de la lista
+		var texto = document.createTextNode('- Elemento de la lista '+
+				contador+': '+this.nombre+' '+
+				this.apellidos+' '+this.dni+' '+this.sexo);	
+		// Añade un elemento a la lista	
+		ul.appendChild(document.createElement("li").appendChild(texto));
+		// Añade un salto de línea
+		ul.appendChild(document.createElement("br"));
 	}
 })();
