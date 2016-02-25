@@ -1,5 +1,5 @@
-/**
- *	Estela Muñoz Cordón
+/*	
+ * by Estela Muñoz Cordón
  *
  * Añadida funcionalidad 
  * para borrar el listado
