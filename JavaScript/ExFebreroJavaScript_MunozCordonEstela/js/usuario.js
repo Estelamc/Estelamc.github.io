@@ -49,6 +49,7 @@
 			var usuarioNuevo = new Usuario(nombre.value.trim(), apellidos.value.trim(), dni.value.trim(), sexo.value.trim());
 			usuarioNuevo.mostrar();
 			usuarioNuevo.listItem();
+			crearCookies();
 		}		
 	}
 
@@ -68,6 +69,7 @@
 		dni.value = "";
 		sexo.value = "";
 		deseleccionarCasilla();	
+		borrarCookies();
 	}
 
 	// Borra los mensajes de error
@@ -191,6 +193,44 @@
 	botonCrear.addEventListener("click", crearUsuario);
 	botonLimpiar.addEventListener("click", limpiar);
 
+	
+	//--------- COOKIES ---------\\	
+
+	// Crea la Cookie
+	function setCookie(nombreCookie, valorCookie, expiracionCookie){
+		var fecha = new Date();
+		fecha.setTime(fecha.getTime() + (expiracionCookie*24*60*60*1000));
+		var expiracion = "expires=" + fecha.toUTCString();
+		document.cookie = nombreCookie + "=" + valorCookie + "; " + expiracion;
+	}
+
+	// Crea las cookies para los valores de los campos
+	function crearCookies(){
+		setCookie(nombre, nombre.value, 365);
+		setCookie(apellidos, nombre.value, 365);
+		setCookie(dni, nombre.value, 365);
+	}
+
+	// Borra las Cookies
+	function borrarCookies(){
+		setCookie(nombre, "", -1);
+		setCookie(apellidos, "", -1);
+		setCookie(dni, "", -1);
+	}
+
+	// Devuelve la Cookie
+	function getCookie(nombreCookie){
+		var nombreC = nombreCookie + "=";
+		var ca = document.cookie.split(";"); // separa nombre y valor (array)
+		for (var i = 0; i <= ca.length; i++) {
+			var c = ca[i]; // valor del array
+			while(c.charAt(0)== ' ') 
+				c = c.substring(1); // cojo una parte 
+			if (c.indexOf(nombreC) == 0) // si es el primero
+				return c.substring(nombreC.length, c.length); // cojo esa parte del valor
+		}
+		return "";
+	}
 
 	//--------- USUARIO ---------\\	
 	
