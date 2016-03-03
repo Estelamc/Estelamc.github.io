@@ -1,0 +1,149 @@
+@font-face{
+  font-family: 'openSans';
+  src: url('../fonts/openSans/web fonts/opensans_regular_macroman/OpenSans-Regular-webfont.ttf');
+  src: url('../fonts/openSans/web fonts/opensans_regular_macroman/OpenSans-Regular-webfont.eot') format('eot'),
+       url('../fonts/openSans/web fonts/opensans_regular_macroman/OpenSans-Regular-webfont.woff') format('woff'),
+       url('../fonts/openSans/web fonts/opensans_regular_macroman/OpenSans-Regular-webfont.ttf') format('truetype'),
+       url('../fonts/openSans/web fonts/opensans_regular_macroman/OpenSans-Regular-webfont.svg') format('svg');
+}
+
+@font-face{
+  font-family: 'sosa';
+  src: url('../fonts/sosa/sosa-regular-webfont.ttf') format('truetype');
+  src: url('../fonts/sosa/sosa-regular-webfont.ttf') format('truetype'),
+       url('../fonts/sosa/sosa-regular-webfont.woff') format('woff'),
+       url('../fonts/sosa/sosa-regular-webfont.woff') format('woff'),
+       url('../fonts/sosa/sosa-regular-webfont.eot') format('eot');
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+body{
+   font-family: 'openSans', Arial, sans-serif;
+   background: url("../img/fondoFlores.jpg") no-repeat;
+   background-size: cover;
+   background-position: -50rem;
+   font-size: 16px;
+}
+
+header{
+    color: white;
+    text-shadow: 1px 1px 2px black;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+h1{
+    color: #819142;
+    margin: 0;
+    padding: 2%;
+    font-size: 4rem;
+}
+
+nav{
+    background-color: #819142;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+nav ul li{
+    display: inline-block;
+    padding: 1%;
+    font-size: 1.3rem;
+}
+
+nav ul li a{
+    margin-left: 1rem;
+    margin-right: 1rem;
+    /*color: #819142;*/
+    color: white;
+    text-shadow: 1px 1px 2px black;
+    font-weight: bold;
+}
+
+main{
+    width: 95%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+img{
+    height: 20rem;
+    margin-bottom: 1rem;
+}
+
+.adorno{
+    padding: 0.5rem;
+    height: 6rem;
+    display: block;
+    margin: 0 auto;
+}
+
+article{
+    overflow: hidden;
+    vertical-align: top;
+    width: 30%;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    margin-left: 0.35rem;
+    margin-right: 0.35rem;
+    background-color: rgba(255, 255, 255, 0.20);
+    display: inline-block;
+    font-size: 1.3rem;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+article p{
+    color: white;
+    text-shadow: 1px 1px 2px black;
+    text-align: justify;
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+}
+
+strong{
+    color: #819142;
+    margin-right: 0.5rem;
+    text-shadow: 1px 1px 2px black;
+}
+
+article>header{
+    background-color: #C36F93;
+    color: white;
+    font-size: 0.9rem;
+    padding: 0.5rem;
+}
+
+button{
+    background-color: #819142;
+    border: 0;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    color: white;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+#iconos{
+    font-family: 'sosa';
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+#iconos>span{
+    display: inline-block;
+    margin: 0.5rem;
+}
+
+footer{
+    margin-top: 1rem;
+    background-color: #819142;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px 2px rgba(0, 0, 0, 0.2);
+}

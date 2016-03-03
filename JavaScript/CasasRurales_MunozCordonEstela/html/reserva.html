@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Estela Muñoz Cordón</title>
+
+		<meta charset="UTF-8" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+        <link rel="stylesheet" type="text/css" href="../css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="../css/principal.css">
+        <link rel="stylesheet" type="text/css" href="../css/reserva.css">
+	</head>
+	<body>
+		<header>
+			<a href="../index.html"><h1>Ruralia</h1></a>
+			<nav>
+				<ul>
+					<li><a href="principal.html">Inicio</a></li>
+					<li><a href="reserva.html">Reserva</a></li>
+                    <li><a href="documentacion.html">Documentación</a></li>
+				</ul>
+			</nav>
+		</header>
+		<main>
+			<form>
+				<label>Nombre</label><input type="text" /><span id="errorN"></span>
+				<br /><label>Apellidos</label><input type="text" /><span id="errorA"></span>
+				<br /><label>Correo</label><input type="text" /><span id="errorC"></span>
+				<br /><label>Teléfono</label><input type="text" /><span id="errorT"></span>
+                <br /><label>Nº de personas</label><input type="text" /><span id="errorNP"></span>
+				<br /><label>Fecha de entrada</label><input type="text" /><span id="errorFE"></span>
+				<br /><label>Fecha de salida</label><input type="text" /><span id="errorFS"></span>
+                <input id="aceptar" type="checkbox" value="si"><label>Acepto las condiciones</label><span id="errorAc"></span>
+				<br /><input type="submit" id="reservar" value="Reservar" />
+			</form>
+		</main>
+
+		<footer>
+			<h3>Estela Muñoz Cordón</h3>
+
+            <div id="iconos">
+                <span>t</span>
+                <span>v</span>
+                <span>Ć</span>
+                <span>ć</span>
+            </div>
+		</footer>
+
+        <!------------- JQUERY Y JQUERY UI ------------->
+        <script src="../js/jquery-2.2.0.js" type="text/javascript"></script>
+        <script src="../js/jquery-ui.js" type="text/javascript"></script>
+        <!------------- PLUGINS ------------->
+        <!-- Plugin para Transformaciones en 2d y 3d -->
+        <script src="../js/jquery.transform2d.js" type="text/javascript"></script>
+        <script src="../js/jquery.transform3d.js" type="text/javascript"></script>
+        <!-- Plugin para Animaciones -->
+        <script src="../js/jquery.animate-shadow.js"></script>
+        <!------------- MI CÓDIGO ------------->
+        <script type="text/javascript" src="../js/efectoBotones.js"></script>
+        <script type="text/javascript" src="../js/efectomMenu.js"></script>
+        <script type="text/javascript" src="../js/reserva.js"></script>
+        <!-- Si JavaScript está deshabilitado -->
+        <noscript>JavaScript se encuentra desactivado, actívelo siguiendo los siguientes pasos:
+            <a href="http://enable-javascript.com/es/">Activar/Desactivar JavaScript</a>
+        </noscript>
+	</body>
+</html>
