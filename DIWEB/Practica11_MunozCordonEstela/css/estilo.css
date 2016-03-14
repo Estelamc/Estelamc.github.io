@@ -1,0 +1,190 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+}
+
+body{
+	font-size: 16px;
+}
+
+header{
+	color: #F47644;
+	text-align: center;
+	background-color: #2F4F4F;
+	padding: 0.2rem;
+}
+
+header>img{
+  width: 8%;	
+}
+
+#cuaderno{
+	margin-top: 1.5rem;
+	margin-right: 25rem;
+}
+
+#cuaderno2{
+	margin-left: 25rem;
+}
+
+header img, #titulos{
+	display: inline-block;
+}
+
+#titulos{
+	margin: 1.5rem;
+}
+
+h1{
+	font-size: 2.7rem;
+	margin: 0;
+}
+
+h2{
+	color: white;
+	margin-top: 1.5rem;
+}
+
+h3{
+	font-size: 1.5rem;
+}
+
+#adorno{
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+	min-height: 0.5rem;
+	background-color: #F47644;
+}
+
+nav{	
+	vertical-align: top;
+	display: inline-block;
+	max-width: 10%;
+	color: white;
+}
+
+nav ul li{
+	font-size: 1.3em;
+	margin: 3em 0 3em 0; /*3em 0px*/
+}
+
+nav ul li a {
+	font-weight: bold;
+	color: white;
+	background: darkslategray;	
+	padding: 0.5em;
+	border-radius: 0 2px 2px 0;
+	box-shadow: 0px 1px 5px black;
+	transition: all 1s;	
+}
+
+nav ul li a:hover{
+	background: white;
+	color: rgb(244, 118, 68); /*#F47644 */
+	box-shadow: -1px 3px 30px black;
+}
+
+main{
+	margin-left: 25%;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+  display: inline-block;
+	width: 37%;
+	border: 0px solid rgb(244, 118, 68); /*#F47644 */
+	border-radius: 3px;
+	box-shadow: 0 1px 4px black;
+}
+
+main>header{
+	border-radius: 3px 3px 0 0px;
+	background-color: #F47644;
+	color: #2F4F4F;
+	padding: 0.8rem;
+}
+
+form{
+	padding: 1rem;
+}
+
+label{
+	color: rgb(244, 118, 68);
+	font-weight: bold;
+	font-size: 1.2em;
+	margin-left: 1.6em;
+	display: inline-block;
+	width: 9.5em;
+}
+
+#descripcion{
+	vertical-align: top;
+	margin-top: 0.6rem;
+}
+
+input{
+	margin-top: 1em;
+	margin-bottom: 1em;
+	width: 15em;
+	transition: all 1s;	
+}
+
+textarea{
+	margin-top: 1em;
+	width: 15em;
+	height: 6em;
+}
+
+input:hover, textarea:hover{
+	box-shadow: 3px 3px 10px darkslategray;
+	border-style: dotted;
+	border-color: rgb(244, 118, 68);
+}
+
+button{
+	display: block;
+	margin: 0 auto;
+	background: darkslategray;
+	border:9px solid darkslategray;
+	box-shadow: 0 2px 4px black;
+	border-radius: 2px;
+	color: white;
+	margin-bottom: 1em;
+	margin-top: 1em;
+	padding: 6px;
+	font-size: 1.4em;
+	font-weight: bold;
+	transition: all 1s;
+	overflow: hidden;
+}
+
+button:hover{
+	border: 9px solid rgb(244, 118, 68);
+	box-shadow: 3px 3px 30px black;
+	background: white;
+	color: rgb(244, 118, 68);
+	font-weight: bold;
+}
+
+footer{
+	padding: 1.5rem;
+	text-align: center;
+	background-color: #2F4F4F;
+	color: white;
+}
+
+#iconos img{
+	margin: 1rem;
+	width: 3%;
+}
+
+footer img{
+	transition: all 1s;	
+	width: 5%;
+	max-width: 3em;
+}
+
+footer img:hover{
+	transform: rotate(-360deg);
+}
+
