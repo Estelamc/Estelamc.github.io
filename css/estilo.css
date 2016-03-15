@@ -24,14 +24,14 @@ footer{
 footer img{
 	width: 3%;
 	padding: 1rem;
-	transition: 1s all;
+	transition: 1.5s all;
 }
 
 footer img:hover{
-	 transform: rotateY(360deg) scale(1.5);
-	 -moz-transform: rotateY(360deg) scale(1.5);
-	 -webkit-transform: rotateY(360deg) scale(1.5);
-	 -o-transform: rotateY(360deg) scale(1.5);
+	 transform: rotateX(360deg) scale(1.5);
+	 -moz-transform: rotateX(360deg) scale(1.5);
+	 -webkit-transform: rotateX(360deg) scale(1.5);
+	 -o-transform: rotateX(360deg) scale(1.5);
 }
 
 h1{
