@@ -1,0 +1,31 @@
+h1{
+  animation-play-state: paused;
+	-moz-animation-play-state: paused;
+	-webkit-animation-play-state: paused;
+	-o-animation-play-state: paused;
+}
+
+main>ul{
+	width: 16.5%;
+	margin: 0 auto;
+	margin-bottom: 3%;
+	margin-top: 3%;
+	text-align: justify;
+}
+
+main>ul>li{	
+	list-style-type: disc;
+	color: #302B41;
+	margin: 0.7rem;
+}
+
+main>ul>li>a{
+	font-size: 1.2rem;
+	color: black;
+}
+
+main>ul>li>a:hover{
+	color: #302B41;
+	text-decoration: underline;
+	text-shadow: 0 1px 2px white;
+}
