@@ -40,6 +40,14 @@ h1{
 	color: #302B41;
 	font-family: 'Lobster Two', cursive;
 	text-shadow: 0 1px 2px black;
+	animation-name: cabecera; 
+  animation-duration: 5s;
+  -moz-animation-name: cabecera; 
+  -moz-animation-duration: 5s;
+  -webkit-animation-name: cabecera; 
+  -webkit-animation-duration: 5s;
+  -o-animation-name: cabecera; 
+  -o-animation-duration: 5s;
 }
 
 header, nav{
@@ -96,4 +104,26 @@ span{
 
 #nombre{
 	font-size: 1.5rem;
+}
+
+/* ANIMACIONES */
+
+@keyframes cabecera{
+  to{transform: rotateY(0deg);}
+  from{transform: rotateY(360deg);}
+}
+
+@-moz-keyframes cabecera{
+  to{transform: rotateY(0deg);}
+  from{transform: rotateY(360deg);}
+}
+
+@-webkit-keyframes cabecera{
+  to{transform: rotateY(0deg);}
+  from{transform: rotateY(360deg);}
+}
+
+@-o-keyframes cabecera{
+  to{transform: rotateY(0deg);}
+  from{transform: rotateY(360deg);}
 }
