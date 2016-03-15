@@ -28,7 +28,10 @@ footer img{
 }
 
 footer img:hover{
+	 transform: rotateY(360deg) scale(1.5);
 	 -moz-transform: rotateY(360deg) scale(1.5);
+	 -webkit-transform: rotateY(360deg) scale(1.5);
+	 -o-transform: rotateY(360deg) scale(1.5);
 }
 
 h1{
