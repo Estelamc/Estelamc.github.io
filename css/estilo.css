@@ -1,0 +1,99 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+}
+
+body{
+	background-color: #9896A4;
+	font-family: 'Roboto', sans-serif;
+}
+
+#contenido{
+	display: inline-block;
+	vertical-align: top;
+	margin: 2%;
+	text-align: justify;
+}
+
+footer{
+	text-align: center;
+}
+
+footer img{
+	width: 3%;
+	padding: 1rem;
+	transition: 1s all;
+}
+
+footer img:hover{
+	 -moz-transform: rotateY(360deg) scale(1.5);
+}
+
+h1{
+	width: 90%;
+	margin: 0 auto;
+	margin-top: 2%;
+	margin-bottom: 2%;
+	font-size: 3rem;
+	color: #302B41;
+	font-family: 'Lobster Two', cursive;
+	text-shadow: 0 1px 2px black;
+}
+
+header, nav{
+	text-align: center;
+}
+
+nav, footer{
+	margin: 0 auto;
+	background-color: #302B41;
+	width: 90%;
+	border-radius: 3px;
+	box-shadow: 0px 1px 3px black;
+}
+
+nav ul li{
+	display: inline-block;
+	margin: 2%;
+}
+
+nav ul li a{
+	padding: 1.5rem;
+	font-size: 1.2rem;
+	color: white;
+	text-shadow: 0 1px 4px black;
+	transition: 0.5s all;
+}
+
+nav ul li a:hover{
+	color: #9896A4;
+	border-bottom: 3px solid #9896A4;
+}
+
+main{
+	margin: 0 auto;
+	text-align: center;
+}
+
+main>img{
+	box-shadow: 0 1px 4px black;
+	margin: 2%;
+}
+
+p{
+	margin: 0.5rem;
+}
+
+span{
+	font-family: 'Lobster Two', cursive;
+	margin-right: 0.5rem;
+	color:  #302B41;
+	font-size: 1.2rem;
+	font-weight: bold;
+}
+
+#nombre{
+	font-size: 1.5rem;
+}
