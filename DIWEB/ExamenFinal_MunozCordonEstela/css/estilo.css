@@ -1,0 +1,355 @@
+@font-face{ 
+  font-family: 'openSans';
+  src: url('../fonts/openSans/web fonts/opensans_regular_macroman/OpenSans-Regular-webfont.ttf');
+  src: url('../fonts/openSans/web fonts/opensans_regular_macroman/OpenSans-Regular-webfont.eot') format('eot'),
+       url('../fonts/openSans/web fonts/opensans_regular_macroman/OpenSans-Regular-webfont.woff') format('woff'),
+       url('../fonts/openSans/web fonts/opensans_regular_macroman/OpenSans-Regular-webfont.ttf') format('truetype'),
+       url('../fonts/openSans/web fonts/opensans_regular_macroman/OpenSans-Regular-webfont.svg') format('svg');
+}
+
+@font-face{
+  font-family: 'sosa';
+  src: url('../fonts/sosa/sosa-regular-webfont.ttf') format('truetype'); 
+  src: url('../fonts/sosa/sosa-regular-webfont.ttf') format('truetype'), 
+       url('../fonts/sosa/sosa-regular-webfont.woff') format('woff'),
+       url('../fonts/sosa/sosa-regular-webfont.woff') format('woff'),
+       url('../fonts/sosa/sosa-regular-webfont.eot') format('eot');
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+body{
+  font-family: 'openSans', Arial, sans-serif;
+  font-size: 16px; 
+  background-color: #F2F2F2;
+  color: #000305;
+  text-align: center;
+}
+
+header img{
+  width: 90%;
+  animation-name: cabecera; 
+  animation-duration: 5s;
+  -moz-animation-name: cabecera; 
+  -moz-animation-duration: 5s;
+  -webkit-animation-name: cabecera; 
+  -webkit-animation-duration: 5s;
+  -o-animation-name: cabecera; 
+  -o-animation-duration: 5s;
+}
+
+#iconos{
+  display: none;
+  font-family: 'sosa';
+  text-align: right;
+  width: 93%;
+  color: #F44336;
+}
+
+#iconos span{
+  display: inline-block;
+  transition: 1.5s all;
+}
+
+#iconos span:hover{
+  -moz-transform: rotateY(360deg) scale(1.7);
+  -webkit-transform: rotateY(360deg) scale(1.7);
+  -o-transform: rotateY(360deg) scale(1.7);
+}
+
+nav ul{
+  width: 95%;
+  margin: 0 auto;
+}
+
+nav ul, article, aside, footer{
+  *box-shadow: 0px 2px 4px #000305, 0 0 2px rgba(0,0,0,.12), 0 2px 4px rgba(0,0,0,.24);
+  box-shadow: 0 2px 2px rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+nav ul li a, nav ul li a:visited{
+  padding: 0.6rem;
+  display: block;
+  background-color: #009688;
+  color: white;
+}
+
+nav ul li a:hover, nav ul li a:active{
+  background-color: white;
+  color: #009688;
+}
+
+#iconos2{
+  font-family: 'sosa';
+}
+
+main{
+  width: 95%;
+  margin: 0 auto;
+}
+
+p{
+  font-size: 0.9rem;
+  text-align: justify;
+  margin-bottom: 1rem;
+}
+
+h1, h2, h3{
+  text-align: left;
+}
+
+h1{
+  animation-name: titulo;
+  animation-duration: 1.5s;
+  -moz-animation-name: titulo;
+  -moz-animation-duration: 1.5s;
+  -webkit-animation-name: titulo;
+  -webkit-animation-duration: 1.5s;
+  -o-animation-name: titulo;
+  -o-animation-duration: 1.5s;
+  margin-top: 0;
+  color: #009688;
+  font-size: 1.2rem;
+}
+
+h2{
+  display: none;
+}
+
+h3{
+  margin-bottom: 1rem;
+  color: #F44336;
+  transition: 1.5s all;
+}
+
+#bottomAside{
+  display: none;
+}
+
+article, aside, footer, nav, #iconos{
+  margin:1rem;
+}
+
+article, aside, footer{
+  background-color: white;
+}
+
+article, aside{
+  padding: 1.5rem;
+  transition: all 0.5s;
+}
+
+article:hover{
+  transform: skew(5deg, 0deg);
+}
+
+aside:hover{
+  color: #009688;
+}
+
+aside:hover h3{
+  margin-left: 1.4rem;
+}
+
+article:hover, aside:hover{
+  box-shadow: 0px 2px 4px #009688, 0 0 2px rgba(0,0,0,.12), 0 2px 4px rgba(0,0,0,.24);;
+}
+
+footer{
+  margin: 0 auto;
+  width: 89%;
+}
+
+footer p{
+  padding: 0.5rem;
+  margin-left: 1.5rem;
+}
+
+footer a{
+  color: #009688;
+}
+
+footer a:hover{
+  color: white;
+  background-color: #009688;
+}
+
+
+/* ANIMACIONES */
+
+@keyframes cabecera{
+  to{transform: rotateY(0deg);}
+  from{transform: rotateY(360deg);}
+}
+
+@-moz-keyframes cabecera{
+  to{transform: rotateY(0deg);}
+  from{transform: rotateY(360deg);}
+}
+
+@-webkit-keyframes cabecera{
+  to{transform: rotateY(0deg);}
+  from{transform: rotateY(360deg);}
+}
+
+@-o-keyframes cabecera{
+  to{transform: rotateY(0deg);}
+  from{transform: rotateY(360deg);}
+}
+
+@keyframes titulo{
+  0%{margin-left: 0px;}
+  10%{margin-left: 120px;}
+  20%{margin-left: 0px;}
+  30%{margin-left: 80px;}
+  40%{margin-left: 0px;}
+  50%{margin-left: 50px;}
+  60%{margin-left: 0px;}
+  70%{margin-left: 25px;}
+  80%{margin-left: 0px;}
+  90%{margin-left: 10px;}
+  100%{margin-left: 0px;}
+}
+
+@-moz-keyframes titulo{
+  0%{margin-left: 0px;}
+  10%{margin-left: 120px;}
+  20%{margin-left: 0px;}
+  30%{margin-left: 80px;}
+  40%{margin-left: 0px;}
+  50%{margin-left: 50px;}
+  60%{margin-left: 0px;}
+  70%{margin-left: 25px;}
+  80%{margin-left: 0px;}
+  90%{margin-left: 10px;}
+  100%{margin-left: 0px;}
+}
+
+@-webkit-keyframes titulo{
+  0%{margin-left: 0px;}
+  10%{margin-left: 120px;}
+  20%{margin-left: 0px;}
+  30%{margin-left: 80px;}
+  40%{margin-left: 0px;}
+  50%{margin-left: 50px;}
+  60%{margin-left: 0px;}
+  70%{margin-left: 25px;}
+  80%{margin-left: 0px;}
+  90%{margin-left: 10px;}
+  100%{margin-left: 0px;}
+}
+
+@-o-keyframes titulo{
+  0%{margin-left: 0px;}
+  10%{margin-left: 120px;}
+  20%{margin-left: 0px;}
+  30%{margin-left: 80px;}
+  40%{margin-left: 0px;}
+  50%{margin-left: 50px;}
+  60%{margin-left: 0px;}
+  70%{margin-left: 25px;}
+  80%{margin-left: 0px;}
+  90%{margin-left: 10px;}
+  100%{margin-left: 0px;}
+}
+
+
+/* RESPONSIVE */
+
+@media screen and (min-width:780px){
+  #iconos, h2, #bottomAside{
+    display: block;
+  }
+  
+  #iconos, nav ul, footer, header img{    
+    width: 90%;
+  }
+  
+  #iconos{
+    margin: 0 auto;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    font-size: 1.3rem;
+  }
+  
+  #iconos2{
+    display: none;
+  }
+  
+  nav{
+    margin: 0;
+  }
+  
+  nav ul{
+    background-color: #009688;
+    text-align: left;
+    margin-bottom: 2.5rem;
+  }
+  
+  nav ul li{
+    text-align: center;
+    display: inline-block;
+  }
+  
+  nav ul li a{
+    width: 5rem;
+    padding: 1rem;
+  }
+  
+  h2{
+    color: #009688;
+    font-size: 0.8rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  main{
+    display: flex;
+    flex-flow: row;
+  }
+  
+  section{
+    order: 1;
+    flex: 20rem;
+  }
+  
+  #asides{
+    margin: 0;
+    order: 2;
+    flex: 1rem;
+    max-width: 25%;
+  }
+  
+  article{
+    margin-left: 0.1rem;
+    margin-right: 0.1rem;
+    display: inline-block;
+    width: 35%;
+    transition: all 2.5s;
+  }
+  
+  article:hover{
+    transform: rotate(-360deg);
+  }
+  
+  aside{
+    margin-left: 0;
+  }
+  
+  #topAside{
+    margin-bottom: 2rem;
+  }
+  
+  footer{
+    margin-top: 2.5rem;
+  }
+  
+  footer p{
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+  }
+}
