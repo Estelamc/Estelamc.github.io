@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Estela Muñoz</title>
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="css/estilo.css">
+</head>
+<body>
+	<main>
+		<h1>Validación de Formulario 2</h1>
+		<form>
+			<label>Nombre</label><input type="text" placeholder="Tu nombre" id="nombre"><span id="errorN"></span><br/>
+			<label>Apellidos</label><input type="text" placeholder="Tus apellidos" id="apellidos"><span id="errorA"></span><br/>
+			<label>DNI</label><input type="text" placeholder="númerosyletra" id="dni"><span id="errorD"></span><br/>
+			<label>alias</label><input type="text" placeholder="tualias" id="alias"><span id="errorAl"></span><br/>
+			<label>Contraseña</label><input type="text" placeholder="tucontraseña" id="pass"><span id="errorC"></span><br/>
+			<label>Fecha de Nacimiento</label><input type="text" placeholder="dd/mm/aaaa" id="fecha"><span id="errorF"></span><br/>
+			<label>Sexo</label>
+				<input type="radio" value="mujer" class="radioB" name="radioButton"><label class="rb">Mujer</label>
+				<input type="radio" value="hombre" class="radioB" name="radioButton"><label class="rb">Hombre</label><span id="errorS"></span><br/>
+			<label id="paisLabel">País</label>
+				<select id="pais">
+				  <option value="">Elige un páis</option>
+				  <option value="spain">España</option>
+				  <option value="italia">Italia</option>
+				  <option value="alemania">Alemania</option>
+				</select><span id="errorP"></span><br/>
+			<label>Correo</label><input type="text" placeholder="correo@mail.algo" id="correo"><span id="errorCor"></span><br/>
+			<label>Cuenta Bancaria</label><input type="text" placeholder="nnnn-nnnn-nn-nnnnnnnnn" id="cuenta"><span id="errorCu"></span><br/>
+			<label>Teléfono</label><input type="text" placeholder="ddd-dd-dd-dd" id="telefono"><span id="errorT"></span><br/>
+			<label>Url</label><input type="text" placeholder="www.url.algo" id="url"><span id="errorU"></span><br/>
+			<input type="checkbox" id="aceptar"><label>Aceptar condiciones</label><span id="errorAc"></span><br/>
+			<div id="botones">
+				<input type="reset" value="Limpiar" id="limpiar">
+				<input type="submit" value="Enviar" id="enviar">
+			</div>
+		</form>
+	</main>
+
+	<script type="text/javascript" src="js/codigo.js"></script>
+	<noscript>JavaScript se encuentra desactivado, actívelo siguiendo los siguientes pasos: <a href="http://enable-javascript.com/es/">Activar/Desactivar Java</a></noscript>
+</body>
+</html>
