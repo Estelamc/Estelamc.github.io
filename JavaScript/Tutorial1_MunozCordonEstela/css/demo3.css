@@ -1,0 +1,11 @@
+/* La clase que añado o elimino con JQuery*/
+.clasecss{
+	background-color: #ff8800;
+	font-weight: bold;
+}
+
+#capa, a{
+	margin: 10px;
+	width: 60%;
+	padding: 10px;
+}

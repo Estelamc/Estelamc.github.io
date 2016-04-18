@@ -1,0 +1,10 @@
+#capaEfectos{
+	width: 60%;
+	background-color: #cc7700; 
+	color:fff; 
+}
+
+#capaEfectos, a{	
+	margin: 10px;
+	padding:10px;
+}

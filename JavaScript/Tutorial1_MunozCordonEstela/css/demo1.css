@@ -1,0 +1,13 @@
+#capa, #mensaje{
+	margin: 10px;
+	width: 60%;
+	padding: 10px;
+}
+
+#capa{	
+	background-color: #ff8800;
+}
+
+#mensaje{
+	display: none;
+}

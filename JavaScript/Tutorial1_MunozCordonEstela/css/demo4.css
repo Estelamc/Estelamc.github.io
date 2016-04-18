@@ -1,0 +1,12 @@
+form{
+	margin: 20px;
+	width: 60%;
+}
+
+input, label{
+	margin: 5px;
+}
+
+#formularioMayores{
+	display: none;
+}
