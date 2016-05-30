@@ -1,0 +1,54 @@
+<!--
+	- Sobre el código anterior, añádele las etiquetas necesarias para tener accesible jQuery, que supuestamente tienes en el mismo directorio que index.html
+ 
+ 	- Añádele un script denominado “código.js” que haga lo siguiente
+      	- Al párrafo primero (examen) aplícale un efecto al cargarse la página. 
+      	- Al párrafo de texto “Nombre” añádele un atributo denominado “id” con tu nombre como valor.
+      	- Al párrafo de texto “Apellidos” añádele un atributo denominado “id” con tu apellido como valor
+      	- Añádele tu nombre al elemento.  En mi caso la página se mostraría: ”Nombre:  Lourdes”
+      	- Añádele tu apellido al elemento.  En mi caso la página se mostraría: ”Apellido:  Magarín”
+       
+  	- Añádele un fichero “plugin.js” donde definas tu propio plugin con gestión de opciones.  Se llamará “cambiar” y funcionará de la siguiente forma:
+	    - Aplicará un fondo 
+	    - Ante el evento click, aumentará su altura y el tamaño de la fuente
+	    - Ante el evento doble click, volverá a su altura y tamaño original
+	    - Las opciones por defecto serán: el color de fondo, la altura y el tamaño de la fuente, que serán respectivamente amarillo, 40% y 5 veces su tamaño.
+	    
+  	- Invoca al plugin de dos formas: 
+       	- Al tercer párrafo, con las opciones por defecto
+        - Al cuarto párrafo, con los siguientes valores: rojo, 100% y 10 veces su tamaño
+  
+  	@author Estela Muñoz Cordón
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Estela Muñoz</title>
+</head>
+<body>
+   <div>
+        <p id="examen">Examen jQuery</p>
+        
+        <div>
+            <p>Módulo: Desarrollo Web en entorno cliente</p>
+        </div>
+        
+        <div>
+            <p>Nombre: </p>
+        </div>
+        
+        <div>
+            <p>Apellido: </p>
+        </div>
+    </div> 
+    
+    <script type="text/javascript" src="js/jquery-2.2.0.js"></script>
+    
+    <script type="text/javascript" src="js/codigo.js"></script>
+    
+    <script type="text/javascript" src="js/plugin.js"></script>
+    
+    <noscript>Active JavaScript para disfrutar de la funcionalidad completa de la página</noscript>
+</body>
+</html>
